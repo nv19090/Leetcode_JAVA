@@ -24,3 +24,28 @@ This makes the current node effectively take the place of the next node, removin
 
 * **Time Complexity:** O(1)
 * **Space Complexity:** O(1)
+
+
+# 876. Middle of the Linked List
+
+## Problem Statement
+
+Given the head of a singly linked list, return the middle node of the linked list.
+
+If there are two middle nodes, return the second middle node.
+
+## Approach
+
+We use the **Fast and Slow Pointer** technique.
+
+* Initialize two pointers, `slow` and `fast`, at the head of the linked list.
+* Move `slow` one step at a time.
+* Move `fast` two steps at a time.
+* When `fast` reaches the end of the list, `slow` will be pointing to the middle node.
+
+If the linked list contains an even number of nodes, the algorithm naturally returns the second middle node.
+
+## Complexity Analysis
+
+* **Time Complexity:** O(n)
+* **Space Complexity:** O(1)
