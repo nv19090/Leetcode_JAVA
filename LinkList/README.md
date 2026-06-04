@@ -49,3 +49,34 @@ If the linked list contains an even number of nodes, the algorithm naturally ret
 
 * **Time Complexity:** O(n)
 * **Space Complexity:** O(1)
+
+# LeetCode 141 - Linked List Cycle
+
+## Problem Statement
+
+Given the `head` of a linked list, determine whether the linked list has a cycle in it.
+
+A cycle exists if some node in the list can be reached again by continuously following the `next` pointer.
+
+---
+
+## Approach: Floyd's Cycle Detection Algorithm (Tortoise and Hare)
+
+We use two pointers:
+
+* **Slow Pointer** moves one step at a time.
+* **Fast Pointer** moves two steps at a time.
+
+## Complexity Analysis
+
+### Time Complexity
+
+* **O(n)**
+* Each pointer traverses the list at most once.
+
+### Space Complexity
+
+* **O(1)**
+* No extra data structures are used.
+
+
