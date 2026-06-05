@@ -1,10 +1,3 @@
-// LeetCode 15 - 3Sum
-// Approach: Sorting + Two Pointers
-// Time Complexity: O(n^2)
-// Space Complexity: O(1) (excluding output space)
-
-import java.util.*;
-
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
