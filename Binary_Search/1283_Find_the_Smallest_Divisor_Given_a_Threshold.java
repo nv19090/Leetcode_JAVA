@@ -1,35 +1,3 @@
-# Find the Smallest Divisor Given a Threshold
-
-## Problem
-Given an array `nums` and an integer `threshold`, find the smallest divisor such that the sum of all divisions rounded up is less than or equal to `threshold`.
-
----
-
-## Approach
-- Use **Binary Search** on the divisor range.
-- The minimum divisor can be `1`.
-- The maximum divisor can be the maximum element in the array.
-- For every middle value:
-  - Compute the sum using ceiling division.
-  - If the sum is within the threshold:
-    - Store the answer.
-    - Try to find a smaller divisor.
-  - Otherwise:
-    - Increase the divisor.
-
----
-
-## Time Complexity
-- **O(n × log(max(nums)))**
-
-## Space Complexity
-- **O(1)**
-
----
-
-## Java Solution
-
-```java
 class Solution {
     public int smallestDivisor(int[] nums, int threshold) {
         int n = nums.length;
