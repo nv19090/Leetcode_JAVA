@@ -1,9 +1,3 @@
-// Problem: 3121 Count the Number of Special Characters
-// Language: Java
-// Approach: HashMap
-// Time Complexity: O(n)
-// Space Complexity: O(n)
-
 class Solution {
 
     public int numberOfSpecialChars(String word) {
