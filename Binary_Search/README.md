@@ -34,6 +34,8 @@ Space Complexity: O(1)
     Only a few extra variables are used.
 
 
+
+
 Problem 1539 - Kth Missing Positive Number
  
 Approach:
@@ -49,6 +51,8 @@ Approach:
  
   Time Complexity: O(log n)
   Space Complexity: O(1)
+
+
 
 
 Problem:  Find the Smallest Divisor Given a Threshold
