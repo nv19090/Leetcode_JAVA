@@ -1,8 +1,3 @@
-// LeetCode 1011 - Capacity To Ship Packages Within D Days
-// Approach: Binary Search on Answer
-// Time Complexity: O(n * log(sum(weights)))
-// Space Complexity: O(1)
-
 class Solution {
     public int shipWithinDays(int[] weights, int days) {
 
