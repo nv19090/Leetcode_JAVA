@@ -1,9 +1,3 @@
-LeetCode: Product of Array Except Self    
-Approach: Prefix Product + Suffix Product
-Time Complexity: O(n)
-Space Complexity: O(n)
-
-
 class Solution {
 
     public int[] productExceptSelf(int[] nums) {
