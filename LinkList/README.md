@@ -79,4 +79,25 @@ We use two pointers:
 * **O(1)**
 * No extra data structures are used.
 
+# 142. Linked List Cycle II
+
+## Problem Statement
+
+Given the head of a linked list, return the node where the cycle begins. If there is no cycle, return `null`.
+
+## Approach
+
+Use Floyd's Cycle Detection Algorithm with two pointers:
+
+* Move `slow` one step at a time and `fast` two steps at a time.
+* If the pointers meet, a cycle exists.
+* Reset `slow` to the head.
+* Move both pointers one step at a time.
+* The node where they meet again is the starting node of the cycle.
+
+## Time Complexity
+O(N)
+
+## Space Complexity
+O(1)
 
