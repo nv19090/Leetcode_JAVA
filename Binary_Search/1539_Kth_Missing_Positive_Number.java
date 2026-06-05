@@ -1,21 +1,3 @@
-/*
- * LeetCode 1539 - Kth Missing Positive Number
- *
- * Approach:
- * We use Binary Search to find how many positive numbers are missing
- * before a particular index.
- *
- * Missing numbers before index `mid`:
- *      arr[mid] - (mid + 1)
- *
- * If missing count is smaller than k,
- * move right side.
- * Otherwise move left side.
- *
- * Time Complexity: O(log n)
- * Space Complexity: O(1)
- */
-
 class Solution {
 
     public int findKthPositive(int[] arr, int k) {
