@@ -1,25 +1,3 @@
-/*
-Problem: Split Array Largest Sum
-410_Split_Array_Largest_Sum.java
-Approach:
-- The answer lies between:
-    1. The maximum element of the array (minimum possible answer).
-    2. The sum of all elements (maximum possible answer).
-- Apply Binary Search on this range.
-- For each candidate value (mid), determine the number of subarrays needed
-  such that the sum of each subarray does not exceed mid.
-- If more than k subarrays are required, mid is too small.
-- Otherwise, try to minimize the answer by searching the left half.
-- The first feasible value obtained is the minimum possible largest subarray sum.
-
-Time Complexity: O(n * log(sum - maxElement))
-    - Binary Search on the answer space.
-    - Each iteration scans the array once.
-
-Space Complexity: O(1)
-    - Only constant extra space is used.
-*/
-
 class Solution {
     public int splitArray(int[] nums, int k) {
         int maxElement = Integer.MIN_VALUE;
