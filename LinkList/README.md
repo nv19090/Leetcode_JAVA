@@ -101,3 +101,31 @@ O(N)
 ## Space Complexity
 O(1)
 
+---
+
+# Palindrome Linked List
+
+## Problem Statement
+Given the head of a singly linked list, return `true` if it is a palindrome, otherwise return `false`.
+
+A palindrome is a sequence that reads the same forward and backward.
+
+## Approach
+1. Traverse the linked list and push all node values into a stack.
+2. Traverse the linked list again from the beginning.
+3. For each node, compare its value with the top element of the stack.
+4. If any value does not match, return `false`.
+5. If all values match, return `true`.
+
+The stack stores elements in reverse order, allowing comparison of the linked list from both ends.
+
+## Time Complexity
+- Traversing the list to fill the stack: **O(n)**
+- Traversing the list again for comparison: **O(n)**
+
+**Overall:** `O(n)`
+
+## Space Complexity
+- Stack stores all node values: **O(n)**
+
+**Overall:** `O(n)`
