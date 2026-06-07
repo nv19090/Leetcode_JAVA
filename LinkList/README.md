@@ -129,3 +129,32 @@ The stack stores elements in reverse order, allowing comparison of the linked li
 - Stack stores all node values: **O(n)**
 
 **Overall:** `O(n)`
+
+---
+
+# Odd Even Linked List
+
+## Problem Statement
+Given the head of a singly linked list, group all nodes with odd indices together followed by the nodes with even indices, and return the reordered list.
+
+The relative order inside the odd and even groups should remain the same.
+
+## Approach
+- First, traverse the linked list to find the last node (`dummy`) and count the total number of nodes.
+- Use two pointers:
+  - `prev` points to the current odd-indexed node.
+  - `next` points to the current even-indexed node.
+- Remove each even-indexed node from its current position.
+- Append the removed even node at the end of the list using the helper `insert()` function.
+- Continue this process for all even-positioned nodes.
+- Finally, return the modified head of the list.
+
+## Time Complexity
+- Finding the length and last node: **O(n)**
+- Rearranging the nodes: **O(n)**
+- Overall: **O(n)**
+
+## Space Complexity
+- No extra data structures are used.
+- Overall: **O(1)**
+
