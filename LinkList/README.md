@@ -158,3 +158,28 @@ The relative order inside the odd and even groups should remain the same.
 - No extra data structures are used.
 - Overall: **O(1)**
 
+---
+
+# Remove Nth Node From End of List
+
+## Problem Statement
+Given the head of a linked list, remove the nth node from the end of the list and return its head.
+
+## Approach
+- Use two pointers: `fast` and `slow`.
+- Move the `fast` pointer `n` steps ahead.
+- Move both `fast` and `slow` simultaneously until `fast` reaches the end of the list.
+- At this point, `slow` points to the node that needs to be removed.
+- Handle the special case where the node to be removed is the head node.
+- Otherwise, traverse from the head to find the node just before `slow` and update its `next` pointer to skip the target node.
+- Return the modified linked list.
+
+## Time Complexity
+- Moving the `fast` pointer: **O(n)**
+- Moving both pointers together: **O(n)**
+- Finding the previous node of the target node: **O(n)**
+**Overall Time Complexity: O(n)**
+
+## Space Complexity
+**O(1)**
+Only a few pointer variables are used, and no extra data structures are required.
