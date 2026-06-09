@@ -183,3 +183,32 @@ Given the head of a linked list, remove the nth node from the end of the list an
 ## Space Complexity
 **O(1)**
 Only a few pointer variables are used, and no extra data structures are required.
+
+---
+
+# Delete_Middle_Node_of_a_Linked_List
+
+## Problem Statement
+Given the `head` of a singly linked list, delete the middle node and return the head of the modified linked list.
+- If the list contains only one node, return `null`.
+- The middle node is defined as the ⌊n / 2⌋th node (0-based indexing), where `n` is the size of the linked list.
+
+## Approach
+
+1. Handle the edge case where the linked list contains only one node. In this case, return `null`.
+2. Use the **Slow and Fast Pointer** technique to find the middle node:
+   - `slow` moves one step at a time.
+   - `fast` moves two steps at a time.
+   - When `fast` reaches the end, `slow` points to the middle node.
+3. Traverse the list again from the head to find the node just before the middle node.
+4. Update its `next` pointer to skip the middle node.
+5. Return the head of the modified linked list.
+
+## Time Complexity
+- Finding the middle node: **O(n)**
+- Finding the previous node of the middle node: **O(n)**
+Overall Time Complexity: **O(n)**
+
+## Space Complexity
+- No extra data structures are used.
+Overall Space Complexity: **O(1)**
