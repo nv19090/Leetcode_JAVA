@@ -39,7 +39,7 @@ O(1)
 
 ---
 
-# 2161_Partition_Array_According_to_Given_Pivot
+# 2161. Partition Array According to Given Pivot
 
 ## Problem Statement
 Given an integer array `nums` and an integer `pivot`, rearrange the array such that:
