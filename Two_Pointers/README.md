@@ -36,3 +36,32 @@ O(1)
 
 * No extra data structures are used apart from the output list.
 * Auxiliary space is constant.
+
+---
+
+# 2161_Partition_Array_According_to_Given_Pivot
+
+## Problem Statement
+Given an integer array `nums` and an integer `pivot`, rearrange the array such that:
+1. All elements less than `pivot` appear before elements equal to `pivot`.
+2. All elements equal to `pivot` appear before elements greater than `pivot`.
+3. The relative order of elements less than `pivot` and greater than `pivot` is maintained.
+Return the rearranged array.
+
+## Approach
+1. Create a new array `ans` of the same size as `nums`.
+2. Traverse the array and place all elements smaller than `pivot` into `ans`.
+3. Traverse again and place all elements equal to `pivot`.
+4. Traverse one final time and place all elements greater than `pivot`.
+5. Return the resulting array.
+This approach preserves the relative order of elements in each group because elements are inserted in the same order as they appear in the original array.
+
+## Time Complexity
+- First traversal: `O(n)`
+- Second traversal: `O(n)`
+- Third traversal: `O(n)`
+Overall Time Complexity: **O(n)**
+
+## Space Complexity
+- Extra array `ans` of size `n`
+Overall Space Complexity: **O(n)**
