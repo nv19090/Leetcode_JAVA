@@ -212,3 +212,100 @@ Overall Time Complexity: **O(n)**
 ## Space Complexity
 - No extra data structures are used.
 Overall Space Complexity: **O(1)**
+
+---
+
+# Add Two Numbers Using Linked List
+
+## Approach
+
+The given solution adds two numbers represented as linked lists.
+
+### Helper Function: `reverse()`
+
+This function reverses a linked list.
+
+```java
+public ListNode reverse(ListNode head)
+```
+
+**Steps:**
+
+1. Initialize three pointers:
+
+   * `prev = null`
+   * `curr = head`
+   * `next = null`
+2. Traverse the list.
+3. Reverse each link.
+4. Return `prev` as the new head.
+
+**Time Complexity:** O(n)
+
+**Space Complexity:** O(1)
+
+---
+
+### Helper Function: `result()`
+
+```java
+public ListNode result(ListNode l3, int sum)
+```
+
+Creates a new node containing `sum` and inserts it at the beginning of list `l3`.
+
+Example:
+
+```
+l3 = 3 -> 4
+sum = 2
+
+After insertion:
+2 -> 3 -> 4
+```
+
+**Time Complexity:** O(1)
+
+---
+
+## Main Function: `addTwoNumbers()`
+
+```java
+public ListNode addTwoNumbers(ListNode l1, ListNode l2)
+```
+
+### Algorithm
+
+1. Initialize:
+
+   * `l3 = null`
+   * `carry = 0`
+
+2. Traverse both lists simultaneously:
+
+   * Add corresponding digits and carry.
+   * Compute:
+
+     ```java
+     carry = sum / 10;
+     sum = sum % 10;
+     ```
+   * Insert the digit at the front of `l3`.
+
+3. Process remaining nodes of `l1` or `l2`.
+
+4. If a carry remains, add it as a new node.
+
+5. Reverse `l3` to obtain the final answer.
+
+### Time Complexity
+```
+O(n + m)
+```
+Each node is visited once.
+
+### Space Complexity
+```
+O(1)
+```
+Only a few pointers are used (excluding the output list).
