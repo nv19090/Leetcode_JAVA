@@ -1,3 +1,28 @@
+# Reverse Linked List
+
+## Problem
+Given the head of a singly linked list, reverse the list and return the new head.
+
+## Approach
+This solution uses the iterative method with three pointers:
+* `prev` stores the previous node.
+* `curr` stores the current node being processed.
+* `Next` stores the next node before changing links.
+
+For each node:
+1. Save the next node.
+2. Reverse the current node's pointer.
+3. Move `prev` and `curr` one step forward.
+After traversing the entire list, `prev` becomes the new head of the reversed linked list.
+
+## Time Complexity
+* **O(n)**
+
+## Space Complexity
+* **O(1)**
+
+---
+
 # 237. Delete Node in a Linked List
 
 ## Problem Statement
