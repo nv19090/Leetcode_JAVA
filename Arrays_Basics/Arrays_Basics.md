@@ -1,7 +1,7 @@
 # Arrays Problems
 ---
 
-# 3689_Maximum_Total_Subarray_Value_I
+# 3689 Maximum Total Subarray Value-I
 
 ## Problem Statement
 Given an integer array `nums` and an integer `k`, find the maximum total value obtainable by taking the difference between the maximum and minimum elements of the array and multiplying it by `k`.
