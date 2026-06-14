@@ -21,3 +21,25 @@ Given an integer array `nums` and an integer `k`, find the maximum total value o
 
 ---
   
+# 3675. Check Good Integer
+
+## Problem Statement
+Given an integer `n`, determine whether it is a **good integer**.
+A number is considered **good** if the difference between the sum of the squares of its digits and the sum of its digits is at least `50`.
+Return `true` if the integer is good; otherwise, return `false`.
+
+## Approach
+1. Traverse each digit of the number using modulo (`% 10`) and division (`/ 10`).
+2. Calculate:
+   * `sum` → Sum of all digits.
+   * `sq` → Sum of squares of all digits.
+3. Compute the difference `sq - sum`.
+4. If the difference is greater than or equal to `50`, return `true`; otherwise, return `false`.
+
+## Time Complexity
+* **O(d)**, where `d` is the number of digits in `n`.
+
+## Space Complexity
+* **O(1)**, as only a few variables are used.
+
+---
