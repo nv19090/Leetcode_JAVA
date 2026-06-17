@@ -32,3 +32,42 @@ This greedy approach ensures that the smallest possible cookie is used to satisf
 * **O(1)** (excluding the space used by the sorting algorithm)
 
 ---
+
+# 860. Lemonade Change
+
+## Problem Statement
+At a lemonade stand, each lemonade costs **$5**.
+Customers pay with bills of **$5**, **$10**, or **$20**. You must provide the correct change to each customer in the order they arrive.
+Initially, you have no change.
+Given an integer array `bills` where `bills[i]` is the bill paid by the `i-th` customer, return `true` if you can provide the correct change to every customer, otherwise return `false`.
+
+## Approach
+1. Maintain two counters:
+
+   * `fivecoin` → Number of $5 bills available.
+   * `tencoin` → Number of $10 bills available.
+
+2. Traverse the `bills` array:
+
+   * If the customer pays with `$5`, increase `fivecoin`.
+   * If the customer pays with `$10`:
+
+     * Give one `$5` bill as change.
+     * Increment `tencoin`.
+     * If no `$5` bill is available, return `false`.
+   * If the customer pays with `$20`:
+
+     * Prefer giving one `$10` bill and one `$5` bill as change.
+     * Otherwise, give three `$5` bills.
+     * If sufficient change is not available, return `false`.
+
+3. If all customers are served successfully, return `true`.
+This greedy approach always prioritizes using a `$10 + $5` combination for a `$20` bill, preserving more `$5` bills for future transactions.
+
+## Time Complexity
+* **O(n)**, where `n` is the number of customers.
+
+## Space Complexity
+* **O(1)**, as only a few variables are used to track the available bills.
+
+---
