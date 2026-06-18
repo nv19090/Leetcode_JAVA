@@ -29,7 +29,40 @@ The solution processes each digit exactly once and keeps track of both the produ
 ## Time Complexity
 * **O(d)**, where `d` is the number of digits in `n`.
 
----
-
 ## Space Complexity
 * **O(1)**, as only a few variables are used regardless of the input size.
+
+---
+
+# 1344. Angle Between Hands of a Clock
+
+## Problem Statement
+Given two numbers, `hour` and `minutes`, return the smaller angle (in degrees) formed between the hour and the minute hand of an analog clock.
+Answers within `10^-5` of the actual value will be accepted.
+
+## Approach
+1. Calculate the position of the hour hand:
+   * Each hour mark represents `30°`.
+   * The hour hand also moves as minutes pass.
+   * Hour hand angle = `30 × hour + 0.5 × minutes`.
+     
+2. Calculate the position of the minute hand:
+   * Each minute mark represents `6°`.
+   * Minute hand angle = `6 × minutes`.
+
+3. Find the absolute difference between the two angles.
+4. Since there are two angles between the hands, return the smaller one:
+   * `min(angle, 360 - angle)`
+
+In the given implementation:
+* `30 * hour - 5.5 * minutes` combines both calculations into a single formula.
+* `Math.abs()` computes the angle difference.
+* `Math.min(ans, 360 - ans)` ensures the smaller angle is returned.
+
+## Time Complexity
+* **O(1)**, as only a few arithmetic operations are performed.
+
+## Space Complexity
+* **O(1)**, since no extra data structures are used.
+
+---
