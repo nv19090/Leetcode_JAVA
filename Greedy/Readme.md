@@ -71,3 +71,50 @@ This greedy approach always prioritizes using a `$10 + $5` combination for a `$2
 * **O(1)**, as only a few variables are used to track the available bills.
 
 ---
+
+# 678. Valid Parenthesis String
+
+## Problem Statement
+
+Given a string `s` containing only three types of characters: `'('`, `')'`, and `'*'`, return `true` if `s` is valid.
+The following rules define a valid string:
+* Any left parenthesis `'('` must have a corresponding right parenthesis `')'`.
+* Any right parenthesis `')'` must have a corresponding left parenthesis `'('`.
+* A left parenthesis `'('` must appear before the corresponding right parenthesis `')'`.
+* `'*'` can be treated as:
+
+  * A single left parenthesis `'('`, or
+  * A single right parenthesis `')'`, or
+  * An empty string `""`.
+
+## Approach
+This solution uses a **Greedy Range Technique**.
+1. Maintain two variables:
+
+   * `open_bracket` → Minimum possible number of unmatched open parentheses.
+   * `closing_bracket` → Maximum possible number of unmatched open parentheses.
+
+2. Traverse the string:
+   * If the character is `'('`:
+     * Increase both minimum and maximum counts.
+   * If the character is `')'`:
+     * Decrease both counts.
+   * If the character is `'*'`:
+     * It can act as `'('`, `')'`, or empty.
+     * Decrease the minimum count and increase the maximum count.
+
+3. If the maximum count becomes negative, there are too many closing brackets, so return `false`.
+4. Keep the minimum count non-negative using:
+
+   ```java
+   open_bracket = Math.max(open_bracket, 0);
+   ```
+
+5. At the end, if the minimum count is `0`, the string can be valid; otherwise, it cannot.
+This greedy method efficiently tracks all possible interpretations of `'*'` without using a stack.
+
+## Time Complexity
+* **O(n)**, where `n` is the length of the string.
+
+## Space Complexity
+* **O(1)**, as only a few integer variables are used.
