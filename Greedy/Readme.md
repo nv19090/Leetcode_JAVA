@@ -118,3 +118,38 @@ This greedy method efficiently tracks all possible interpretations of `'*'` with
 
 ## Space Complexity
 * **O(1)**, as only a few integer variables are used.
+
+---
+
+# 1833. Maximum Ice Cream Bars
+
+## Problem Statement
+
+It is a sweltering summer day, and a boy wants to buy ice cream bars.
+You are given an array `costs` where `costs[i]` is the price of the `i-th` ice cream bar, and an integer `coins` representing the number of coins the boy has.
+Return the maximum number of ice cream bars the boy can buy with the available coins.
+Note that the boy can buy the ice cream bars in any order.
+
+## Approach
+### Greedy + Sorting
+
+1. Sort the `costs` array in ascending order.
+2. Start purchasing ice cream bars from the cheapest one.
+3. Maintain a running sum of the costs spent.
+4. If purchasing the current ice cream keeps the total cost within the available coins:
+
+   * Increase the count.
+5. Otherwise, stop purchasing further ice creams.
+6. Return the total count of ice cream bars bought.
+
+The greedy strategy works because buying cheaper ice creams first always leaves the maximum number of coins available for future purchases, resulting in the maximum possible count.
+
+## Time Complexity
+* **O(n log n)**
+  * Sorting the array takes `O(n log n)`.
+  * Traversing the array takes `O(n)`.
+
+## Space Complexity
+* **O(1)** (excluding the space used by the sorting algorithm).
+
+---
