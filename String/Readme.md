@@ -36,3 +36,40 @@ Time Complexity
 Space Complexity
 - O(k)
 - The "StringBuilder" stores the generated string, whose size can grow based on the operations performed.
+
+---
+
+# 1189. Maximum Number of Balloons
+
+## Problem Statement
+Given a string `text`, return the maximum number of instances of the word **"balloon"** that can be formed using the characters in `text`.
+
+Each character in `text` can be used at most once.
+
+## Approach
+
+### Character Frequency Counting
+
+1. Count the occurrences of the characters required to form the word `"balloon"`:
+   * `b`
+   * `a`
+   * `l`
+   * `o`
+   * `n`
+2. Since the word `"balloon"` contains:
+   * `l` twice
+   * `o` twice
+
+   divide the counts of `l` and `o` by `2`.
+
+3. The number of complete `"balloon"` words that can be formed is limited by the character with the smallest available count.
+4. Return the minimum count among all required characters.
+This works because every occurrence of `"balloon"` requires exactly one `b`, one `a`, two `l`s, two `o`s, and one `n`.
+
+## Time Complexity
+* **O(n)**, where `n` is the length of the string `text`.
+
+## Space Complexity
+* **O(1)**, as only a fixed-size array of length 5 is used.
+
+---
