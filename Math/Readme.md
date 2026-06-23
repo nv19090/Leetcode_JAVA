@@ -66,3 +66,37 @@ In the given implementation:
 * **O(1)**, since no extra data structures are used.
 
 ---
+
+3300. Minimum Element After Replacement With Digit Sum
+
+Problem Statement
+You are given an integer array "nums".
+
+Replace each element in the array with the sum of its digits. After performing the replacement for all elements, return the minimum element in the resulting array.
+
+Approach
+
+Digit Sum Computation
+
+1. Traverse each element of the array.
+2. For every number:
+   - Extract its digits using modulo ("% 10").
+   - Add the digits to compute the digit sum.
+   - Remove the last digit using integer division ("/ 10").
+3. Keep track of the minimum digit sum encountered.
+4. Return the minimum value after processing all elements.
+
+This approach computes the digit sum of each number and simultaneously maintains the smallest digit sum.
+
+Time Complexity
+- O(n × d), where:
+  - "n" is the number of elements in the array.
+  - "d" is the maximum number of digits in an element.
+
+Since "d" is at most 10 for standard integer values, this is effectively O(n).
+
+Space Complexity
+- O(1), as only a few extra variables are used.
+
+---
+        
