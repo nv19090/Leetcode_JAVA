@@ -153,3 +153,48 @@ The greedy strategy works because buying cheaper ice creams first always leaves 
 * **O(1)** (excluding the space used by the sorting algorithm).
 
 ---
+
+# 881. Boats to Save People
+
+## Problem Statement
+
+You are given an array `people` where `people[i]` is the weight of the `i-th` person, and an integer `limit` representing the maximum weight a boat can carry.
+
+Each boat can carry **at most two people** at the same time, provided the sum of their weights does not exceed `limit`.
+
+Return the **minimum number of boats** required to carry every person.
+
+## Approach
+
+### Greedy + Two Pointers + Sorting
+
+1. Sort the array of people's weights in ascending order.
+2. Initialize two pointers:
+
+   * `i` at the beginning (lightest person).
+   * `j` at the end (heaviest person).
+3. While `i <= j`:
+
+   * If the lightest and heaviest person can share a boat (`people[i] + people[j] <= limit`):
+
+     * Place them together.
+     * Move both pointers (`i++`, `j--`).
+   * Otherwise:
+
+     * The heaviest person must go alone.
+     * Move only the `j` pointer.
+   * Increment the boat count in both cases.
+4. Return the total number of boats used.
+
+The greedy strategy works because pairing the heaviest person with the lightest possible person minimizes the total number of boats.
+
+## Time Complexity
+* **O(n log n)**
+
+  * Sorting the array takes **O(n log n)**.
+  * The two-pointer traversal takes **O(n)**.
+
+## Space Complexity
+* **O(1)** (excluding the space used by the sorting algorithm).
+
+---
