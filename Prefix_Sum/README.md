@@ -6,7 +6,7 @@
 ## Problem Statement
 Given an integer array `nums`, return an array `answer` such that `answer[i]` is equal to the product of all the elements of `nums` except `nums[i]`.
 The solution must be computed without using division.
-
+ 
 ## Approach
 * Create a suffix product array where `suffix[i]` stores the product of all elements to the right of index `i`.
 * Initialize a variable `prefix` to store the product of elements to the left of the current index.
