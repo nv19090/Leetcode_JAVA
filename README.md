@@ -30,19 +30,31 @@ My goal is to strengthen my understanding of Data Structures and Algorithms, imp
 ## 📚 Repository Structure
 
 LeetCode-Java
-│
+--
 ├── Arrays_Basics
+--
 ├── Binary_Search
+--
 ├── Greedy
+--
 ├── Hashing
+--
 ├── Linked_List
+--
 ├── Math
+--
 ├── Recursion
+--
 ├── Sliding_Window
+--
 ├── Sorting
+--
 ├── String
+--
 ├── Two_Pointers
+--
 ├── Prefix_Sum
+--
 └── README.md
 
 ---
