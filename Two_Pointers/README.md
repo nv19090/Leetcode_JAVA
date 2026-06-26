@@ -65,3 +65,50 @@ Overall Time Complexity: **O(n)**
 ## Space Complexity
 - Extra array `ans` of size `n`
 Overall Space Complexity: **O(n)**
+
+---
+
+# 633. Sum of Square Numbers
+
+## Problem Statement
+
+Given a non-negative integer `c`, decide whether there exist two integers `a` and `b` such that:
+
+`a² + b² = c`
+
+Return `true` if such a pair exists; otherwise, return `false`.
+
+## Approach
+
+### Two Pointers + Math
+
+1. Initialize two pointers:
+
+   * `i = 0`
+   * `j = √c` (the largest possible value whose square is less than or equal to `c`).
+
+2. While `i <= j`:
+
+   * Compute `i² + j²`.
+   * If the sum equals `c`, return `true`.
+   * If the sum is greater than `c`, decrement `j` to reduce the sum.
+   * Otherwise, increment `i` to increase the sum.
+
+3. If no valid pair is found after the traversal, return `false`.
+
+The two-pointer approach efficiently searches all possible pairs without checking every combination.
+
+## Time Complexity
+
+* **O(√c)**
+
+  * Each pointer moves at most `√c` times.
+
+## Space Complexity
+
+* **O(1)**
+
+  * Only a few extra variables are used.
+
+---
+
