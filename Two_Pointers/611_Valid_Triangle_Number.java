@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 class Solution {
     public int triangleNumber(int[] nums) {
         int n = nums.length;
