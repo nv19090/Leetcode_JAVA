@@ -112,3 +112,42 @@ The two-pointer approach efficiently searches all possible pairs without checkin
 
 ---
 
+# 611. Valid Triangle Number
+
+## Problem Statement
+
+Given an integer array `nums`, return the number of triplets chosen from the array that can form a valid triangle.
+
+A triangle is valid if the sum of any two sides is greater than the third side.
+
+## Approach
+
+### Sorting + Two Pointers
+
+1. Sort the array in non-decreasing order.
+2. Fix the largest side by iterating from the end of the array.
+3. Use two pointers:
+
+    * `left` at the beginning of the array.
+    * `right` just before the fixed largest side.
+4. If `nums[left] + nums[right] > nums[i]`:
+
+    * Every element between `left` and `right - 1` can also form a valid triangle with `nums[right]` and `nums[i]`.
+    * Add `right - left` to the answer.
+    * Move `right` one step left.
+5. Otherwise:
+
+    * Move `left` one step right to increase the sum.
+6. Continue until all possible triplets have been checked.
+
+This greedy two-pointer approach efficiently counts all valid triangles after sorting.
+
+## Time Complexity
+* **O(n²)**
+
+    * Sorting takes **O(n log n)**.
+    * The two-pointer traversal takes **O(n²)**.
+
+## Space Complexity
+* **O(1)** (excluding the space used by the sorting algorithm).
+

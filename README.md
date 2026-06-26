@@ -30,10 +30,10 @@ My goal is to strengthen my understanding of Data Structures and Algorithms, imp
 ## 📊 Repository Statistics
 
 | Category       | Value    |
-| -------------- | -------- |
+| -------------- |----------|
 | Language       | Java     |
 | Platform       | LeetCode |
-| Total Problems | 36       |
+| Total Problems | 37       |
 | Topics Covered | 12       |
 
 ---
@@ -66,19 +66,19 @@ LeetCode-Java
 The table below shows the number of LeetCode problems solved in each Data Structures and Algorithms topic.
 
 | Topic | Problems Solved |
-| :----- | --------------: |
-| Arrays         |        2 |
-| Binary Search  |        5 |
-| Two Pointers   |        3 |
-| Sliding Window |        0 |
-| Hashing        |        2 |
-| Greedy         |        5 |
-| Math           |        3 |
-| String         |        2 |
-| Sorting        |        1 |
-| Recursion      |        1 |
-| Prefix Sum     |        2 |
-| Linked List    |       10 |
+| :----- |----------------:|
+| Arrays         |               2 |
+| Binary Search  |               5 |
+| Two Pointers   |               4 |
+| Sliding Window |               0 |
+| Hashing        |               2 |
+| Greedy         |               5 |
+| Math           |               3 |
+| String         |               2 |
+| Sorting        |               1 |
+| Recursion      |               1 |
+| Prefix Sum     |               2 |
+| Linked List    |              10 |
 
 ---
 
