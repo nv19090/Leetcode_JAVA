@@ -15,16 +15,16 @@ My goal is to strengthen my understanding of Data Structures and Algorithms, imp
 
 ## ✨ Features
 
--  Topic-wise organization
--  Java solutions
--  Detailed README for every topic
--  Problem-wise explanations
--  Time & Space Complexity analysis
--  Regularly updated
+- 📂 Topic-wise organization
+- ☕ Java solutions
+- 📖 Detailed README for every topic
+- 📝 Problem-wise explanations
+- ⏱️ Time & Space Complexity analysis
+- 🔄 Regularly updated
 
 ---
 
-💡 Every solution includes clean Java code, and most problems are accompanied by an explanation of the approach along with time and space complexity analysis.
+> 💡 Every solution includes clean Java code, and most problems are accompanied by an explanation of the approach along with time and space complexity analysis.
 
 ---
 ## 📊 Repository Statistics
@@ -38,7 +38,7 @@ My goal is to strengthen my understanding of Data Structures and Algorithms, imp
 
 ---
 
-## 📚 Repository Structure
+## 📂 Repository Structure
 
 ```text
 LeetCode-Java
@@ -61,29 +61,12 @@ LeetCode-Java
 ```
 ---
 
-| Topic          |   Progress  |
-| -------------- | :---------: |
-| Arrays         | 🟢 Learning |
-| Binary Search  | 🟢 Learning |
-| Greedy         | 🟢 Learning |
-| Hashing        | 🟢 Learning |
-| Linked List    | 🟢 Learning |
-| Math           | 🟢 Learning |
-| Recursion      | 🟢 Learning |
-| Sliding Window | 🟢 Learning |
-| Sorting        | 🟢 Learning |
-| String         | 🟢 Learning |
-| Two Pointers   | 🟢 Learning |
-| Prefix Sum     | 🟢 Learning |
-
----
-
 ## 📈 Topic-wise Progress
 
 The table below shows the number of LeetCode problems solved in each Data Structures and Algorithms topic.
 
-| Topic          | Problems |
-| -------------- | -------: |
+| Topic | Problems Solved |
+| :----- | --------------: |
 | Arrays         |        2 |
 | Binary Search  |        5 |
 | Two Pointers   |        3 |
@@ -95,7 +78,7 @@ The table below shows the number of LeetCode problems solved in each Data Struct
 | Sorting        |        1 |
 | Recursion      |        1 |
 | Prefix Sum     |        2 |
-| Linked_List    |       10 |
+| Linked List    |       10 |
 
 ---
 
