@@ -3,7 +3,7 @@
 ## Problem
 Given the head of a singly linked list, reverse the list and return the new head.
 
-## Approach
+## Approach 
 This solution uses the iterative method with three pointers:
 * `prev` stores the previous node.
 * `curr` stores the current node being processed.
