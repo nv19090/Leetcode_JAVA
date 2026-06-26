@@ -24,6 +24,9 @@ My goal is to strengthen my understanding of Data Structures and Algorithms, imp
 
 ---
 
+💡 Every solution includes clean Java code, and most problems are accompanied by an explanation of the approach along with time and space complexity analysis.
+
+---
 ## 📊 Repository Statistics
 
 | Category       | Value    |
@@ -31,6 +34,7 @@ My goal is to strengthen my understanding of Data Structures and Algorithms, imp
 | Language       | Java     |
 | Platform       | LeetCode |
 | Total Problems | 36       |
+| Topics Covered | 12       |
 
 ---
 
@@ -55,8 +59,8 @@ LeetCode-Java
 ├── .gitignore
 └── README.md
 ```
-
 ---
+
 | Topic          |   Progress  |
 | -------------- | :---------: |
 | Arrays         | 🟢 Learning |
@@ -74,6 +78,10 @@ LeetCode-Java
 
 ---
 
+## 📈 Topic-wise Progress
+
+The table below shows the number of LeetCode problems solved in each Data Structures and Algorithms topic.
+
 | Topic          | Problems |
 | -------------- | -------: |
 | Arrays         |        2 |
@@ -87,7 +95,7 @@ LeetCode-Java
 | Sorting        |        1 |
 | Recursion      |        1 |
 | Prefix Sum     |        2 |
-| LinkList       |       10 |
+| Linked_List    |       10 |
 
 ---
 
@@ -103,8 +111,10 @@ LeetCode-Java
 
 ## ⭐ Support
 
-My goal is to strengthen my understanding of Data Structures and Algorithms, improve problem-solving skills, and prepare for technical interviews through consistent practice.
+If you find this repository helpful, consider giving it a ⭐.
 
-If you find this repository useful, consider giving it a ⭐.
+Your support motivates me to continue solving problems and improving this repository.
 
 Happy Coding! 🚀
+---
+---
