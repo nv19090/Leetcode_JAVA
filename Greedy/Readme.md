@@ -167,7 +167,7 @@ Return the **minimum number of boats** required to carry every person.
 ## Approach
 
 ### Greedy + Two Pointers + Sorting
-
+ 
 1. Sort the array of people's weights in ascending order.
 2. Initialize two pointers:
 
