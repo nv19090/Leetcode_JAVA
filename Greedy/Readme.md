@@ -198,3 +198,48 @@ The greedy strategy works because pairing the heaviest person with the lightest 
 * **O(1)** (excluding the space used by the sorting algorithm).
 
 ---
+
+# 1846. Maximum Element After Decreasing and Rearranging
+
+## Problem Statement
+
+You are given an array of positive integers `arr`.
+
+Perform the following operations any number of times:
+
+* Decrease the value of any element to a smaller positive integer.
+* Rearrange the elements in any order.
+
+After performing the operations, the array must satisfy:
+
+* The first element is equal to `1`.
+* The absolute difference between any two adjacent elements is at most `1`.
+
+Return the **maximum possible value** of the largest element in the resulting array.
+
+## Approach
+
+### Greedy + Sorting
+
+1. Sort the array in non-decreasing order.
+2. Set the first element to `1` since the final array must start with `1`.
+3. Traverse the remaining elements:
+
+    * If the current element is greater than the previous element, set it to `previous + 1`.
+    * Otherwise, keep it unchanged.
+4. After processing all elements, the last element of the array is the maximum possible value.
+
+The greedy strategy ensures that every element is as large as possible while maintaining the required adjacent difference of at most `1`.
+
+## Time Complexity
+* **O(n log n)**
+
+    * Sorting the array takes **O(n log n)**.
+    * Traversing the array takes **O(n)**.
+
+## Space Complexity
+* **O(1)** (excluding the space used by the sorting algorithm).
+
+---
+
+
