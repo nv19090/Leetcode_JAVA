@@ -97,12 +97,14 @@ A substring is a contiguous sequence of characters within a string.
 The solution leverages Java's efficient built-in substring search to determine whether each pattern appears in the given word.
 
 ## Time Complexity
+
 * **O(n × m)**
    * `n` = number of strings in `patterns`
    * `m` = length of `word`
    * Each `contains()` operation may take up to `O(m)` in the worst case.
 
 ## Space Complexity
+
 * **O(1)**
    * No extra data structures are used.
 
