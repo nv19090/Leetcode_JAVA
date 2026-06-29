@@ -73,3 +73,41 @@ This works because every occurrence of `"balloon"` requires exactly one `b`, one
 * **O(1)**, as only a fixed-size array of length 5 is used.
 
 ---
+
+# 1967. Number of Strings That Appear as Substrings in Word
+
+## Problem Statement
+
+Given an array of strings `patterns` and a string `word`, return the number of strings in `patterns` that appear as a substring of `word`.
+
+A substring is a contiguous sequence of characters within a string.
+
+## Approach
+
+### String Matching
+
+1. Initialize a counter to `0`.
+2. Traverse each string in the `patterns` array.
+3. For every pattern:
+
+   * Use Java's built-in `contains()` method to check whether it exists as a substring of `word`.
+   * If it exists, increment the counter.
+4. Return the total count.
+
+The solution leverages Java's efficient built-in substring search to determine whether each pattern appears in the given word.
+
+## Time Complexity
+
+* **O(n × m)**
+   * `n` = number of strings in `patterns`
+   * `m` = length of `word`
+   * Each `contains()` operation may take up to `O(m)` in the worst case.
+
+## Space Complexity
+
+* **O(1)**
+   * No extra data structures are used.
+
+---
+
+
