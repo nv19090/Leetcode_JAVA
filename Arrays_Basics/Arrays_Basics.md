@@ -43,3 +43,4 @@ Return `true` if the integer is good; otherwise, return `false`.
 * **O(1)**, as only a few variables are used.
 
 ---
+
