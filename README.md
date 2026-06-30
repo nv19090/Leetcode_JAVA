@@ -33,7 +33,7 @@ My goal is to strengthen my understanding of Data Structures and Algorithms, imp
 | -------------- |----------|
 | Language       | Java     |
 | Platform       | LeetCode |
-| Total Problems | 38       |
+| Total Problems | 40       |
 | Topics Covered | 12       |
 
 ---
@@ -70,11 +70,11 @@ The table below shows the number of LeetCode problems solved in each Data Struct
 | Arrays         |               2 |
 | Binary Search  |               5 |
 | Two Pointers   |               4 |
-| Sliding Window |               0 |
+| Sliding Window |               1 |
 | Hashing        |               2 |
 | Greedy         |               6 |
 | Math           |               3 |
-| String         |               2 |
+| String         |               3 |
 | Sorting        |               1 |
 | Recursion      |               1 |
 | Prefix Sum     |               2 |
