@@ -101,3 +101,35 @@ Since `d` is at most 10 for standard integer values, this is effectively **O(n)*
 
 ---
 
+# Sum and Multiply
+
+## Problem Statement
+
+Given an integer `n`, perform the following operations:
+
+1. Ignore all digits equal to `0`.
+2. Construct a new number by reversing the remaining non-zero digits.
+3. Compute the sum of the digits of the newly formed number.
+4. Return the product of the new number and the sum of its digits.
+
+## Approach
+
+### Digit Manipulation
+
+1. Traverse the digits of the given number.
+2. Ignore every digit that is `0`.
+3. Construct a new number by appending each non-zero digit in reverse order.
+4. Compute the sum of the digits of the newly formed number.
+5. Multiply the number by its digit sum.
+6. Return the final result.
+
+The solution uses basic digit extraction (`% 10`) and integer division (`/ 10`) to process the number efficiently.
+
+## Time Complexity
+* **O(d)**, where `d` is the number of digits in `n`.
+
+## Space Complexity
+* **O(1)**, as only a constant amount of extra space is used.
+
+---
+
