@@ -101,7 +101,7 @@ Since `d` is at most 10 for standard integer values, this is effectively **O(n)*
 
 ---
 
-# Sum and Multiply
+# 3754. Sum and Multiply
 
 ## Problem Statement
 
