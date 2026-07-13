@@ -56,3 +56,47 @@ This reduces the number of multiplications from **O(n)** to **O(log n)**.
 
 ---
 
+# 1295. Find Numbers with Even Number of Digits
+
+## Problem Statement
+
+Given an array `nums` of integers, return how many of them contain an **even number of digits**.
+
+## Approach
+
+## Recursion
+
+1. Traverse each element of the array.
+2. For every number, recursively count the number of digits:
+
+   * Base Case:
+
+     * If the number becomes `0`, return the digit count.
+   * Recursive Case:
+
+     * Increment the count.
+     * Recursively process `n / 10`.
+3. Check whether the returned digit count is even.
+4. If it is even, increment the answer.
+5. Return the total count.
+
+Although this problem is commonly solved using Math or String conversion, this implementation demonstrates how recursion can be used to count the digits of a number.
+
+**Topic:** Arrays, Math
+**Technique Used:** Recursion
+
+## Time Complexity
+* O(n × d)
+
+  * `n` = number of elements in the array.
+  * `d` = number of digits in each number.
+
+Since the number of digits in an integer is small, this is effectively **O(n)**.
+
+## Space Complexity
+* O(d)
+
+  * Due to the recursion call stack while counting the digits of a number.
+
+---
+
