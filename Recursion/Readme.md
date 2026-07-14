@@ -100,3 +100,58 @@ Since the number of digits in an integer is small, this is effectively **O(n)**.
 
 ---
 
+# 8. String to Integer (atoi)
+
+## Problem Statement
+
+Implement the `myAtoi(string s)` function, which converts a string to a 32-bit signed integer.
+
+The algorithm for `myAtoi(s)` is as follows:
+
+1. Ignore any leading whitespace.
+2. Check for an optional `'+'` or `'-'` sign.
+3. Read the digits until a non-digit character is encountered or the end of the string is reached.
+4. If no digits are read, return `0`.
+5. Clamp the result to the 32-bit signed integer range:
+
+   * `[-2³¹, 2³¹ - 1]`
+6. Return the resulting integer.
+
+## Approach
+
+### Recursion + String Parsing
+
+1. Start traversing the string recursively from index `0`.
+2. Skip all leading whitespace characters.
+3. If a `'+'` or `'-'` is encountered before reading any digit, determine the sign.
+4. Recursively process each digit:
+
+   * Convert the character to its numeric value.
+   * Update the accumulated number.
+5. Before every recursive call, check for integer overflow:
+
+   * If the value exceeds `Integer.MAX_VALUE`, return `Integer.MAX_VALUE`.
+   * If the value is less than `Integer.MIN_VALUE`, return `Integer.MIN_VALUE`.
+6. Stop recursion when:
+
+   * A non-digit character is encountered.
+   * The end of the string is reached.
+7. Return the final signed integer.
+
+This implementation uses recursion instead of the common iterative approach to parse the string.
+
+**Topic:** Strings
+**Technique Used:** Recursion
+
+## Time Complexity
+
+* O(n), where `n` is the length of the string.
+
+## Space Complexity
+
+* O(n)
+
+  * Due to the recursion call stack in the worst case.
+
+---
+
