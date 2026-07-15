@@ -90,3 +90,50 @@ Using a `HashMap` allows us to count frequencies efficiently while preserving th
 
 ---
 
+# 1331. Rank Transform of an Array
+
+## Problem Statement
+
+Given an integer array `arr`, replace each element with its rank.
+
+The rank represents how large the element is. The rank has the following rules:
+
+* Rank is an integer starting from `1`.
+* The larger the element, the larger the rank.
+* If two elements are equal, they must have the same rank.
+* Ranks should be as small as possible.
+
+Return the rank-transformed array.
+
+## Approach
+
+### Sorting + HashMap
+
+1. Copy all elements of the array into a new list.
+2. Sort the copied list in non-decreasing order.
+3. Traverse the sorted list:
+
+   * Assign ranks starting from `1`.
+   * Store each unique element and its corresponding rank in a `HashMap`.
+4. Traverse the original array:
+
+   * Replace each element with its rank using the `HashMap`.
+5. Return the transformed array.
+
+Using a sorted copy allows ranks to be assigned in increasing order, while the `HashMap` enables constant-time lookup for each original element.
+
+**Topic:** Arrays, Sorting, Hashing
+**Technique Used:** Sorting + HashMap
+
+## Time Complexity
+* O(n log n)
+
+  * Sorting the copied array takes **O(n log n)**.
+  * Building the map and constructing the answer each take **O(n)**.
+
+## Space Complexity
+* O(n)
+
+  * Extra space is used for the copied list, `HashMap`, and output array.
+
+---
