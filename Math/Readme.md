@@ -133,3 +133,48 @@ The solution uses basic digit extraction (`% 10`) and integer division (`/ 10`) 
 
 ---
 
+# 3685. GCD Sum of Array
+
+## Problem Statement
+
+You are given an integer array `nums`.
+
+Compute the GCD values according to the problem definition and return the required GCD sum.
+
+
+## Approach
+
+### Recursion + Sorting + Two Pointers
+
+1. Traverse the array while maintaining the maximum element seen so far.
+2. For each element, compute the GCD of the current element and the maximum element using the Euclidean Algorithm.
+3. Store all computed GCD values in a new array.
+4. Sort the GCD array.
+5. Use two pointers:
+
+   * `left` at the beginning.
+   * `right` at the end.
+6. Compute the GCD of the paired elements and add it to the answer.
+7. Continue until all valid pairs have been processed.
+8. Return the final GCD sum.
+
+The Euclidean Algorithm is implemented recursively, allowing each GCD computation to be performed efficiently.
+
+**Topic:** Math, Sorting
+**Technique Used:** Recursion (Euclidean Algorithm), Sorting, Two Pointers
+
+
+## Time Complexity
+* O(n log n + n log M)
+
+  * `O(n log M)` for GCD computations (`M` is the maximum element).
+  * `O(n log n)` for sorting.
+  * `O(n)` for the two-pointer traversal.
+
+## Space Complexity
+* O(n)
+
+  * Extra space is used for the `prefixGcd` array.
+
+---
+
