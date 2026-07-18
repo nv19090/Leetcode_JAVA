@@ -178,3 +178,44 @@ The Euclidean Algorithm is implemented recursively, allowing each GCD computatio
 
 ---
 
+# 1979. Find Greatest Common Divisor of Array
+
+## Problem Statement
+
+Given an integer array `nums`, return the **greatest common divisor (GCD)** of the smallest number and the largest number in the array.
+
+The **greatest common divisor** of two numbers is the largest positive integer that divides both numbers without leaving a remainder.
+
+## Approach
+
+### Math + Recursion (Euclidean Algorithm)
+
+1. Traverse the array to find:
+
+   * The minimum element.
+   * The maximum element.
+2. Compute the GCD of these two numbers using the **Euclidean Algorithm**.
+3. The recursive GCD function works as follows:
+
+   * If `b == 0`, return `a`.
+   * Otherwise, recursively compute `gcd(b, a % b)`.
+4. Return the computed GCD.
+
+The Euclidean Algorithm efficiently computes the greatest common divisor in logarithmic time.
+
+**Topic:** Math
+**Technique Used:** Recursion (Euclidean Algorithm)
+
+## Time Complexity
+* O(n + log(min(a, b)))
+
+  * `O(n)` to find the minimum and maximum elements.
+  * `O(log(min(a, b)))` to compute the GCD.
+
+## Space Complexity
+* O(log(min(a, b)))
+
+  * Due to the recursion call stack of the Euclidean Algorithm.
+
+---
+
