@@ -137,3 +137,48 @@ Using a sorted copy allows ranks to be assigned in increasing order, while the `
   * Extra space is used for the copied list, `HashMap`, and output array.
 
 ---
+
+# 128. Longest Consecutive Sequence
+
+## Problem Statement
+
+Given an unsorted array of integers `nums`, return the length of the longest consecutive elements sequence.
+
+A consecutive sequence consists of numbers that differ by exactly `1`.
+
+You must return the length of the longest consecutive sequence present in the array.
+
+## Approach
+
+### HashSet + Sorting
+
+1. Insert all elements into a `HashSet` to remove duplicate values.
+2. Convert the `HashSet` into an array.
+3. Sort the array in ascending order.
+4. Traverse the sorted array:
+
+   * If the current element is exactly `1` greater than the previous element, extend the current consecutive sequence.
+   * Otherwise, update the maximum sequence length and start a new sequence.
+5. Return the length of the longest consecutive sequence found.
+
+Using a `HashSet` eliminates duplicates before sorting, ensuring consecutive elements are counted correctly.
+
+**Topic:** Arrays, Hashing, Sorting
+**Technique Used:** HashSet + Sorting
+
+## Time Complexity
+
+* O(n log n)
+
+  * Inserting elements into the `HashSet` takes **O(n)**.
+  * Sorting the unique elements takes **O(n log n)**.
+  * Traversing the sorted array takes **O(n)**.
+
+## Space Complexity
+
+* O(n)
+
+  * Extra space is used for the `HashSet` and the array of unique elements.
+
+---
+
