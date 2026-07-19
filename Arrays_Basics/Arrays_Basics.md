@@ -43,3 +43,44 @@ Return `true` if the integer is good; otherwise, return `false`.
 * **O(1)**, as only a few variables are used.
 
 ---
+
+# 485. Max Consecutive Ones
+
+## Problem Statement
+
+Given a binary array `nums`, return the maximum number of consecutive `1`s in the array.
+
+## Approach
+
+### Linear Traversal
+
+1. Initialize two variables:
+
+   * `count` to store the current streak of consecutive `1`s.
+   * `mx` to store the maximum streak found so far.
+2. Traverse the array from left to right.
+3. For each element:
+
+   * If it is `1`, increment `count` and update `mx`.
+   * If it is `0`, reset `count` to `0`.
+4. After completing the traversal, return `mx`.
+
+Since the array is scanned only once, this approach is both simple and efficient.
+
+**Topic:** Arrays
+**Technique Used:** Linear Traversal
+
+## Time Complexity
+
+* O(n)
+
+  * The array is traversed exactly once.
+
+## Space Complexity
+
+* O(1)
+
+  * Only a few extra variables are used.
+
+---
+
