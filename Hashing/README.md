@@ -182,3 +182,44 @@ Using a `HashSet` eliminates duplicates before sorting, ensuring consecutive ele
 
 ---
 
+# 347. Top K Frequent Elements
+
+## Problem Statement
+
+Given an integer array `nums` and an integer `k`, return the `k` most frequent elements.
+
+You may return the answer in any order.
+
+## Approach
+
+### HashMap + Sorting
+
+1. Traverse the array and use a `HashMap` to store the frequency of each element.
+2. Convert the `HashMap` entries into a list.
+3. Sort the list in descending order based on the frequency of each element.
+4. Traverse the sorted list and collect the first `k` elements.
+5. Convert the result list into an array and return it.
+
+The `HashMap` efficiently counts frequencies, while sorting ensures that the most frequent elements appear first.
+
+**Topic:** Hashing, Sorting
+**Technique Used:** HashMap + Sorting
+
+## Time Complexity
+
+* **O(n + m log m)**
+
+  * `O(n)` to count frequencies.
+  * `O(m log m)` to sort the unique elements, where `m` is the number of distinct elements.
+  * `O(k)` to build the answer.
+Note: Time complexity can be improve by using Bucket Sort or either Quick Sort...
+
+## Space Complexity
+
+* **O(m)**
+
+  * `HashMap`, list of entries, and result array require extra space, where `m` is the number of distinct elements.
+
+---
+
+
