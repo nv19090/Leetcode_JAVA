@@ -84,3 +84,48 @@ Since the array is scanned only once, this approach is both simple and efficient
 
 ---
 
+# 1464. Maximum Product of Two Elements in an Array
+
+## Problem Statement
+
+Given an integer array `nums`, choose two different indices `i` and `j` such that:
+
+* `0 <= i, j < nums.length`
+* `i != j`
+
+Return the maximum value of:
+
+`(nums[i] - 1) * (nums[j] - 1)`
+
+## Approach
+
+### Linear Traversal
+
+1. Traverse the array once while maintaining:
+
+   * `largest` → the largest element found so far.
+   * `slargest` → the second largest element found so far.
+2. If the current element is greater than or equal to `largest`:
+
+   * Update `slargest` with the previous `largest`.
+   * Update `largest` with the current element.
+3. Otherwise, if the current element is greater than `slargest`, update `slargest`.
+4. After the traversal, compute and return:
+
+   * `(largest - 1) * (slargest - 1)`.
+
+This approach avoids sorting and finds the answer in a single pass.
+
+**Topic:** Arrays
+**Technique Used:** Linear Traversal
+
+## Time Complexity
+* **O(n)**
+
+  * The array is traversed exactly once.
+
+## Space Complexity
+* **O(1)**
+
+  * Only two variables are used to track the largest and second-largest elements.
+
