@@ -129,3 +129,45 @@ This approach avoids sorting and finds the answer in a single pass.
 
   * Only two variables are used to track the largest and second-largest elements.
 
+---
+
+# 1911. Maximum Alternating Subsequence Sum
+  
+## Problem Statement
+
+Given an integer array `nums`, return the alternating sum of a subsequence.
+
+The alternating sum of a subsequence is defined as the sum of elements at even indices minus the sum of elements at odd indices in that subsequence.
+
+## Approach
+
+### Linear Traversal
+
+1. Initialize a variable `sum` to store the alternating sum.
+2. Traverse the array from left to right.
+3. For each element:
+
+   * If its index is even, add it to `sum`.
+   * If its index is odd, subtract it from `sum`.
+4. Return the final alternating sum.
+
+This approach computes the alternating sum by processing each element exactly once.
+
+**Topic:** Arrays
+**Technique Used:** Linear Traversal
+
+> **Note:** The code shown computes the alternating sum of the **entire array**, not the **maximum alternating subsequence sum** required by LeetCode 1911. Therefore, this implementation does **not** solve the official LeetCode problem correctly.
+
+## Time Complexity
+* O(n)
+
+  * The array is traversed once.
+
+## Space Complexity
+* O(1)
+
+  * Only a few extra variables are used.
+
+---
+
+
