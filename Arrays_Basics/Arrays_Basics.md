@@ -170,4 +170,56 @@ This approach computes the alternating sum by processing each element exactly on
 
 ---
 
+# Count Ratio Subarrays
+
+## Problem Statement
+
+Given an integer array `nums` and two integers `a` and `b`, count the number of subarrays where the ratio between the count of even and odd elements satisfies the required condition.
+
+For each subarray:
+
+* Let `x` be the number of even elements.
+* Let `y` be the number of odd elements.
+
+A subarray is considered valid if:
+
+`b × x ≤ a × y`
+
+Return the total number of valid subarrays.
+
+## Approach
+
+### Brute Force
+
+1. Iterate over every possible starting index of a subarray.
+2. For each starting index, extend the subarray one element at a time.
+3. Maintain:
+
+   * `x` → Number of even elements.
+   * `y` → Number of odd elements.
+4. After adding each element, check whether:
+
+   * `b * x <= a * y`
+5. If the condition is satisfied, increment the answer.
+6. Return the total count.
+
+This solution checks every possible subarray while maintaining the counts of even and odd elements incrementally.
+
+**Topic:** Arrays
+**Technique Used:** Brute Force
+
+## Time Complexity
+
+* O(n²)
+
+  * Every possible subarray is examined.
+
+## Space Complexity
+* O(1)
+
+  * Only a few integer variables are used.
+
+---
+
+
 
