@@ -222,4 +222,44 @@ Note: Time complexity can be improve by using Bucket Sort or either Quick Sort..
 
 ---
 
+# 3731. Find Missing Elements
+
+## Problem Statement
+
+Given an integer array `nums`, return a list of all missing integers between the minimum and maximum elements of the array (inclusive).
+
+The returned list should contain every integer that does not appear in the array.
+
+## Approach
+
+### HashMap + Linear Traversal
+
+1. Traverse the array to determine:
+
+   * The minimum element.
+   * The maximum element.
+2. Store the frequency of each element in a `HashMap`.
+3. Iterate through every integer from the minimum value to the maximum value.
+4. If a number is not present in the `HashMap`, add it to the answer list.
+5. Return the list of missing integers.
+
+The `HashMap` enables constant-time lookups while checking whether each number in the range exists.
+
+**Topic:** Arrays, Hashing
+**Technique Used:** HashMap
+
+## Time Complexity
+* **O(n + (max - min + 1))**
+
+  * `O(n)` to find the minimum, maximum, and build the frequency map.
+  * `O(max - min + 1)` to identify all missing elements.
+
+## Space Complexity
+* **O(n)**
+
+  * Extra space is used for the `HashMap` and the output list.
+
+---
+
+
 
