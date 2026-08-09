@@ -170,7 +170,7 @@ This approach computes the alternating sum by processing each element exactly on
 
 ---
 
-# Count Ratio Subarrays
+# 4011_Count_Subarrays_With_Even_Odd_Ratio_I
 
 ## Problem Statement
 
@@ -252,13 +252,13 @@ This approach checks every possible subarray and calculates its product incremen
 
 ## Time Complexity
 
-* **O(n²)**
+* O(n²)
 
   * Two nested loops are used to examine all possible subarrays.
 
 ## Space Complexity
 
-* **O(1)**
+* O(1)
 
   * Only a few variables are used.
 
