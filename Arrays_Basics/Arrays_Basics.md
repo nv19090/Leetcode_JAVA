@@ -221,5 +221,48 @@ This solution checks every possible subarray while maintaining the counts of eve
 
 ---
 
+# 152. Maximum Product Subarray
+
+## Problem Statement
+
+Given an integer array `nums`, find a subarray that has the largest product, and return the product.
+
+A subarray is a contiguous non-empty sequence of elements within an array.
+
+---
+
+## Approach
+
+### Brute Force
+
+1. Initialize `ans` to `Integer.MIN_VALUE` to store the maximum product found.
+2. Use two nested loops to consider every possible starting and ending position of a subarray.
+3. For each starting index `i`, initialize `product = 1`.
+4. Extend the subarray by moving `j` from `i` to the end of the array.
+5. Multiply the current element with `product`.
+6. Update `ans` with the maximum product found.
+7. Return `ans`.
+
+This approach checks every possible subarray and calculates its product incrementally instead of recalculating the product for each subarray.
+
+**Topic:** Arrays
+**Technique Used:** Brute Force
+
+---
+
+## Time Complexity
+
+* **O(n²)**
+
+  * Two nested loops are used to examine all possible subarrays.
+
+## Space Complexity
+
+* **O(1)**
+
+  * Only a few variables are used.
+
+---
+
 
 
