@@ -53,4 +53,49 @@ This solution simulates the exchange process while greedily performing every pos
 
 ---
 
+# 1518. Water Bottles
 
+## Problem Statement
+
+Given two integers:
+
+* `numBottles` — the number of full water bottles you initially have.
+* `numExchange` — the number of empty bottles required to exchange for one full bottle.
+
+You can drink the full bottles and collect the empty bottles.
+
+Whenever you have at least `numExchange` empty bottles, you can exchange them for one full bottle. After drinking the exchanged bottle, you receive another empty bottle.
+
+Return the maximum number of water bottles you can drink.
+
+## Approach
+
+### Simulation
+
+1. Initially, drink all `numBottles` full bottles.
+2. Store the number of empty bottles in `empty`.
+3. While there are enough empty bottles to make an exchange:
+
+   * Use the available empty bottles to obtain as many full bottles as possible.
+   * Count the newly obtained bottles in `filled_tobe`.
+   * Add them to the total number of bottles drunk.
+   * After drinking the newly obtained bottles, add them to the empty bottles.
+4. Repeat the process until there are not enough empty bottles for another exchange.
+5. Return the total number of bottles drunk.
+
+This solution directly simulates the bottle exchange process until no further exchange is possible.
+
+**Topic:** Math, Simulation
+**Technique Used:** Simulation
+
+## Time Complexity
+
+* **O(n)**, where `n` is the number of initial bottles.
+* The number of exchanges is bounded by the number of available bottles.
+
+## Space Complexity
+
+* **O(1)**
+* Only a constant number of variables are used.
+
+---
