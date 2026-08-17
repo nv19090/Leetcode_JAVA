@@ -56,3 +56,44 @@ The `cal()` method handles the arithmetic operation for each operator.
 
 ---
 
+# 739. Daily Temperatures
+
+## Problem Statement
+
+Given an array of integers `temp` representing daily temperatures, return an array `answer` such that `answer[i]` is the number of days you have to wait after the `i`th day to get a warmer temperature.
+
+If there is no future day for which this is possible, `answer[i]` should remain `0`.
+
+## Approach
+
+### Monotonic Stack
+
+1. Create a stack to store the **indices** of temperatures that have not yet found a warmer day.
+2. Traverse the temperature array from left to right.
+3. For each temperature:
+
+   * While the stack is not empty and the current temperature is greater than the temperature at the index on top of the stack:
+
+     * Pop the previous index.
+     * Calculate the number of days between the current index and the popped index.
+     * Store this difference in `answer`.
+4. Push the current index onto the stack.
+5. Any indices remaining in the stack do not have a warmer future temperature, so their answers remain `0`.
+
+The stack maintains indices whose next warmer temperature has not yet been found.
+
+**Topic:** Stack, Arrays
+**Technique Used:** Monotonic Stack
+
+## Time Complexity
+
+* O(n)
+* Every index is pushed into the stack once and popped at most once.
+
+## Space Complexity
+
+* O(n)
+* The stack can contain up to `n` indices, and the answer array also requires `O(n)` space.
+
+---
+
