@@ -2,6 +2,8 @@
 A curated collection of LeetCode solutions in Java, organized by Data Structures and Algorithms topics.
 
 ---
+📌 Weekly Updates: New solutions and improvements are added every week, usually on Saturday or Sunday.
+---
 
 ## 📖 About
 
