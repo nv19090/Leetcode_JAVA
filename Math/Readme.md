@@ -219,3 +219,42 @@ The Euclidean Algorithm efficiently computes the greatest common divisor in loga
 
 ---
 
+# 1822. Sign of the Product of an Array
+
+## Problem Statement
+
+There is a function `signFunc(x)` that returns:
+
+* `1` if `x` is positive.
+* `-1` if `x` is negative.
+* `0` if `x` is equal to `0`.
+
+Given an integer array `nums`, return the sign of the product of all elements in the array.
+
+## Approach
+
+### Counting Negative Numbers
+
+1. Traverse the entire array.
+2. If any element is `0`, immediately return `0` because the product will be zero.
+3. Count the number of negative elements.
+4. If the count of negative numbers is odd, the product is negative, so return `-1`.
+5. If the count is even, the product is positive, so return `1`.
+
+There is no need to calculate the actual product. We only need to determine whether the number of negative elements is odd or even.
+
+**Topic:** Math, Arrays
+**Technique Used:** Counting
+
+## Time Complexity
+
+* O(n)
+* The array is traversed once.
+
+## Space Complexity
+
+* O(1)
+* Only one counter variable is used.
+
+---
+
