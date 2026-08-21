@@ -261,5 +261,47 @@ The `HashMap` enables constant-time lookups while checking whether each number i
 
 ---
 
+# 2958. Length of Longest Subarray With at Most K Frequency
 
+## Problem Statement
+
+Given an integer array `nums` and an integer `k`, return the length of the longest subarray in which the frequency of every element is **at most `k`**.
+
+A subarray is a contiguous part of the array.
+
+## Approach
+
+### Sliding Window + HashMap
+
+1. Use two pointers:
+
+   * `left` → left boundary of the window.
+   * `right` → right boundary of the window.
+2. Use a `HashMap` to store the frequency of each element inside the current window.
+3. Move `right` through the array and increase the frequency of `nums[right]`.
+4. If the frequency of `nums[right]` becomes greater than `k`:
+
+   * Move `left` forward.
+   * Decrease the frequency of `nums[left]`.
+   * Remove the element from the map if its frequency becomes `0`.
+5. Once the window becomes valid, calculate its length.
+6. Update the maximum length.
+7. Continue until the entire array has been processed.
+
+The sliding window ensures that every element in the current subarray occurs at most `k` times.
+
+**Topic:** Arrays, Hashing
+**Technique Used:** Sliding Window + HashMap
+
+## Time Complexity
+
+* **O(n)**
+* Each element is added to and removed from the sliding window at most once.
+
+## Space Complexity
+
+* **O(n)**
+* In the worst case, the `HashMap` can contain all distinct elements.
+
+---
 
