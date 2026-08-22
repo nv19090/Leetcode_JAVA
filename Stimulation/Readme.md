@@ -99,3 +99,56 @@ This solution directly simulates the bottle exchange process until no further ex
 * Only a constant number of variables are used.
 
 ---
+
+# 1701. Average Waiting Time
+
+## Problem Statement
+
+There is a single chef in a restaurant. Customers arrive at different times and each customer requires a certain amount of time to prepare their order.
+
+Given a 2D array `customers`, where:
+
+* `customers[i][0]` represents the arrival time of the `i`th customer.
+* `customers[i][1]` represents the time required to prepare the customer's order.
+
+The chef prepares customers in the given order.
+
+Return the **average waiting time** for all customers.
+
+## Approach
+
+### Simulation
+
+1. Maintain `cheffree` to represent the time when the chef becomes available.
+2. Traverse each customer in order.
+3. For every customer:
+
+   * Store the arrival time.
+   * Store the preparation time.
+   * Calculate the actual start time using:
+     `max(arrival, cheffree)`.
+4. Calculate the finishing time:
+   `start + preparation time`.
+5. Calculate the customer's waiting time:
+   `finish - arrival`.
+6. Add the waiting time to `result`.
+7. Update `cheffree` to the finishing time.
+8. After processing all customers, divide the total waiting time by the number of customers.
+
+This simulates the chef's availability and calculates each customer's waiting time sequentially.
+
+**Topic:** Arrays, Simulation
+**Technique Used:** Simulation
+
+## Time Complexity
+
+* **O(n)**
+* Each customer is processed exactly once.
+
+## Space Complexity
+
+* **O(1)**
+* Only a constant number of variables are used.
+
+---
+
