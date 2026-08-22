@@ -258,3 +258,47 @@ There is no need to calculate the actual product. We only need to determine whet
 
 ---
 
+# 3622. Check Divisibility by Digit Sum and Product
+
+## Problem Statement
+
+You are given a positive integer `n`.
+
+Let:
+
+* `sum` be the sum of all digits of `n`.
+* `product` be the product of all digits of `n`.
+
+Return `true` if `n` is divisible by `sum + product`; otherwise, return `false`.
+
+## Approach
+
+### Digit Manipulation
+
+1. Store the original value of `n` in `p`.
+2. Initialize:
+
+   * `sum = 0` to store the sum of digits.
+   * `product = 1` to store the product of digits.
+3. Extract each digit using `p % 10`.
+4. Add the digit to `sum`.
+5. Multiply the digit with `product`.
+6. Remove the last digit using `p / 10`.
+7. Calculate `total = sum + product`.
+8. Check whether `n` is divisible by `total`.
+9. Return the result.
+
+**Topic:** Math
+**Technique Used:** Digit Manipulation
+
+## Time Complexity
+
+* **O(d)**, where `d` is the number of digits in `n`.
+
+## Space Complexity
+
+* **O(1)**
+* Only a constant number of variables are used.
+
+---
+
