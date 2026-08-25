@@ -114,4 +114,48 @@ The solution leverages Java's efficient built-in substring search to determine w
 
 ---
 
+# 4030. Check ASCII Palindromic
+
+## Problem Statement
+
+Given a string `s`, determine whether the concatenation of the **8-bit binary representations of the ASCII values** of its characters forms a palindrome.
+
+For each character:
+
+* Convert its ASCII value into binary.
+* Represent it using 8 bits.
+* Concatenate all the binary representations.
+* Check whether the resulting binary string is a palindrome.
+
+Return `true` if it is a palindrome; otherwise, return `false`.
+
+## Approach
+
+### ASCII Conversion + Binary String + Two Pointers
+
+1. Traverse every character of the string.
+2. Convert each character to its ASCII value.
+3. Convert the ASCII value into its binary representation using `Integer.toBinaryString()`.
+4. Append the binary representation to `Binary`.
+5. Ensure the required 8-bit representation by adding leading zeroes.
+6. Use two pointers:
+
+   * `i` starting from the beginning.
+   * `j` starting from the end.
+7. Compare the characters at both positions.
+8. If any pair is different, return `false`.
+9. If all pairs match, return `true`.
+
+**Topic:** Strings, Math
+**Technique Used:** ASCII/Binary Conversion + Two Pointers
+
+## Time Complexity
+
+* **O(n²)** in the worst case due to repeated string concatenation.
+* The palindrome check itself takes **O(n)**.
+
+## Space Complexity
+
+* **O(n)**
+* The binary representation requires space proportional to the length of the input string.
 
