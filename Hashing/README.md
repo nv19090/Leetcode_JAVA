@@ -305,3 +305,38 @@ The sliding window ensures that every element in the current subarray occurs at 
 
 ---
 
+# 3718. Smallest Missing Multiple of K
+
+## Problem Statement
+
+Given an integer array `nums` and an integer `k`, return the smallest positive multiple of `k` that is missing from `nums`.
+
+A multiple of `k` is any positive integer divisible by `k`.
+
+## Approach
+
+### HashMap + Enumeration
+
+1. Traverse the array and store each element in a `HashMap`.
+2. Find the maximum element in the array.
+3. Start checking the positive multiples of `k` from `k`.
+4. For each multiple `i * k`:
+
+   * If it exists in the `HashMap`, continue to the next multiple.
+   * Otherwise, return it as the smallest missing multiple.
+5. If no missing multiple is found within the checked range, return `-1`.
+
+The `HashMap` provides efficient membership checking while the multiples of `k` are checked in increasing order.
+
+**Topic:** Arrays, Hashing
+**Technique Used:** HashMap + Enumeration
+
+## Time Complexity
+
+* O(n) on average.
+* Building the `HashMap` takes `O(n)`, and the number of multiples checked is bounded by the input constraints.
+
+## Space Complexity
+
+* O(n)
+* The `HashMap` stores the elements of the array.
