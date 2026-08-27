@@ -302,3 +302,45 @@ Return `true` if `n` is divisible by `sum + product`; otherwise, return `false`.
 
 ---
 
+# 3827. Count Monobit Integers
+
+## Problem Statement
+
+You are given an integer `n`.
+
+An integer is called **Monobit** if all bits in its binary representation are the same.
+
+For example:
+
+* `0 → 0` → Monobit
+* `1 → 1` → Monobit
+* `3 → 11` → Monobit
+* `7 → 111` → Monobit
+* `5 → 101` → Not Monobit
+
+Return the number of Monobit integers in the range `[0, n]`, inclusive.
+
+## Approach
+
+### Binary Conversion + Counting
+
+1. Iterate through every integer from `0` to `n`.
+2. Convert each integer into its binary representation using `Integer.toBinaryString()`.
+3. Count the number of `0`s and `1`s in the binary representation.
+4. If all bits are `0` or all bits are `1`, increment the answer.
+5. Return the total count.
+
+This approach directly checks every number in the given range and determines whether its binary representation contains only one type of bit.
+
+**Topic:** Bit Manipulation, Enumeration
+**Technique Used:** Binary Conversion + Counting
+
+## Time Complexity
+
+* **O(n log n)**
+* There are `n` numbers to check, and each binary representation can contain up to `O(log n)` bits.
+
+## Space Complexity
+
+* **O(log n)**
+* The binary representation of each number requires up to `O(log n)` space.
