@@ -344,3 +344,47 @@ This approach directly checks every number in the given range and determines whe
 
 * **O(log n)**
 * The binary representation of each number requires up to `O(log n)` space.
+
+---
+
+# 3828. Final Element After Subarray Deletions
+
+## Problem Statement
+
+You are given an integer array `nums`.
+
+Alice and Bob play a game in turns, with Alice playing first. In each turn, the current player removes a non-empty subarray that is smaller than the current array, and the remaining elements form the new array.
+
+* Alice wants to maximize the final remaining element.
+* Bob wants to minimize the final remaining element.
+
+Both players play optimally.
+
+Return the value of the final remaining element.
+
+## Approach
+
+### Mathematical Observation
+
+The key observation is that only the **first and last elements** can determine the final answer.
+
+1. Alice plays first and can remove the middle portion of the array.
+2. This allows her to preserve the two endpoints.
+3. Any middle element cannot be guaranteed to survive because Bob can remove it on his turn.
+4. Therefore, the final value that Alice can guarantee is the larger of the two endpoints.
+5. Return `Math.max(nums[0], nums[n - 1])`.
+
+Thus, no simulation or complex game-theory algorithm is required.
+
+**Topic:** Math, Arrays
+**Technique Used:** Mathematical Observation
+
+## Time Complexity
+
+* **O(1)**
+* Only the first and last elements are accessed and compared.
+
+## Space Complexity
+
+* **O(1)**
+* No extra data structure is used.
