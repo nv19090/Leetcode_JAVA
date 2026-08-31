@@ -287,4 +287,44 @@ The greedy idea is to keep as many elements as possible and remove only one elem
 
 ---
 
+# 2091. Removing Minimum and Maximum From Array
+
+## Problem Statement
+
+You are given a 0-indexed array of distinct integers `nums`.
+
+The array contains a minimum element and a maximum element. Your goal is to remove both of them.
+
+In one deletion, you can remove an element from either the **front** or the **back** of the array.
+
+Return the minimum number of deletions required to remove both the minimum and maximum elements.
+
+## Approach
+
+### Greedy + Index Calculation
+
+1. Traverse the array to find the minimum and maximum values.
+2. Find the indices of both elements.
+3. There are three possible ways to remove them:
+
+   * Remove both from the **front**.
+   * Remove both from the **back**.
+   * Remove one from the **front** and the other from the **back**.
+4. Calculate the number of deletions for each case.
+5. Return the minimum of the three possibilities.
+
+The solution only depends on the positions of the minimum and maximum elements, so there is no need to actually perform the deletions.
+
+**Topic:** Arrays, Greedy
+**Technique Used:** Index Calculation + Greedy
+
+## Time Complexity
+
+* **O(n)**
+* The array is traversed a constant number of times.
+
+## Space Complexity
+
+* **O(1)**
+* Only a constant number of variables are used.
 
