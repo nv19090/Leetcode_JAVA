@@ -388,3 +388,48 @@ Thus, no simulation or complex game-theory algorithm is required.
 
 * **O(1)**
 * No extra data structure is used.
+
+---
+
+# 3875. Construct Uniform Parity Array I
+
+## Problem Statement
+
+You are given an array `nums1` of distinct integers.
+
+You need to construct another array `nums2` of the same length such that all elements of `nums2` are either **all odd** or **all even**.
+
+For each index `i`, you can choose either:
+
+* `nums2[i] = nums1[i]`
+* `nums2[i] = nums1[i] - nums1[j]`, where `j != i`
+
+Return `true` if it is possible to construct such an array.
+
+## Approach
+
+### Mathematical Observation
+
+The answer is always `true`.
+
+* If all elements of `nums1` already have the same parity, we can simply choose `nums2[i] = nums1[i]`.
+* If the array contains both odd and even numbers, we can make every element odd:
+
+  * Keep odd elements unchanged.
+  * For every even element, subtract an odd element.
+  * `even - odd = odd`.
+
+Therefore, regardless of the contents of the array, a valid `nums2` can always be constructed.
+
+**Topic:** Math, Arrays
+**Technique Used:** Parity + Mathematical Observation
+
+## Time Complexity
+
+* **O(1)**
+* The solution directly returns `true` without traversing the array.
+
+## Space Complexity
+
+* **O(1)**
+* No extra space is used.
