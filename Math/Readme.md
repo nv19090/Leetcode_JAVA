@@ -433,3 +433,48 @@ Therefore, regardless of the contents of the array, a valid `nums2` can always b
 
 * **O(1)**
 * No extra space is used.
+
+---
+
+# 3870. Count Commas in Range
+
+## Problem Statement
+
+Given an integer `n`, return the total number of commas used when writing all integers from `1` to `n` in standard number formatting.
+
+A comma is inserted after every three digits from the right. Numbers with fewer than four digits contain no commas.
+
+## Approach
+
+The key observation is that, according to the constraints `1 <= n <= 10^5`, no number can contain more than one comma.
+
+* Numbers from `1` to `999` contain no commas.
+* Every number from `1000` to `n` contains exactly one comma.
+
+Therefore, if `n < 1000`, the answer is `0`.
+
+Otherwise, the number of integers in the range `[1000, n]` is:
+
+`n - 1000 + 1 = n - 999`
+
+So the answer can be calculated directly without using any loop.
+
+## Topic + Technique Used
+
+**Topic:** Math
+**Technique:** Mathematical Observation + Range Counting
+
+## Time Complexity
+
+**O(1)**
+
+The solution performs only a condition check and a constant-time arithmetic calculation.
+
+## Space Complexity
+
+**O(1)**
+
+No additional data structures are used.
+
+---
+
