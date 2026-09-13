@@ -2,6 +2,8 @@
 A curated collection of LeetCode solutions in Java, organized by Data Structures and Algorithms topics.
 
 ---
+📌 Weekly Updates: New solutions and improvements are added every week, usually on Saturday or Sunday.
+---
 
 ## 📖 About
 
@@ -33,8 +35,8 @@ My goal is to strengthen my understanding of Data Structures and Algorithms, imp
 | -------------- |----------|
 | Language       | Java     |
 | Platform       | LeetCode |
-| Total Problems | 40       |
-| Topics Covered | 12       |
+| Total Problems | 70       |
+| Topics Covered | 14       |
 
 ---
 
@@ -49,12 +51,14 @@ LeetCode-Java
 ├── Hashing
 ├── Linked_List
 ├── Math
+├── Prefix_Sum
 ├── Recursion
 ├── Sliding_Window
 ├── Sorting
+├── Stack
+├── Stimulation
 ├── String
 ├── Two_Pointers
-├── Prefix_Sum
 ├── LICENSE
 ├── .gitignore
 └── README.md
@@ -67,18 +71,20 @@ The table below shows the number of LeetCode problems solved in each Data Struct
 
 | Topic | Problems Solved |
 | :----- |----------------:|
-| Arrays         |               2 |
+| Arrays         |               7 |
 | Binary Search  |               5 |
-| Two Pointers   |               4 |
-| Sliding Window |               1 |
-| Hashing        |               2 |
-| Greedy         |               6 |
-| Math           |               3 |
-| String         |               3 |
+| Two Pointers   |               6 |
+| Sliding Window |               2 |
+| Hashing        |               9 |
+| Greedy         |               7 |
+| Math           |               9 |
+| String         |               4 |
 | Sorting        |               1 |
-| Recursion      |               1 |
+| Recursion      |               3 |
 | Prefix Sum     |               2 |
 | Linked List    |              10 |
+| Stimulation    |               3 |
+| Stack          |               2 |
 
 ---
 

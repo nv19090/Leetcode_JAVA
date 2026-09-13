@@ -133,3 +133,348 @@ The solution uses basic digit extraction (`% 10`) and integer division (`/ 10`) 
 
 ---
 
+# 3685. GCD Sum of Array
+
+## Problem Statement
+
+You are given an integer array `nums`.
+
+Compute the GCD values according to the problem definition and return the required GCD sum.
+
+
+## Approach
+
+### Recursion + Sorting + Two Pointers
+
+1. Traverse the array while maintaining the maximum element seen so far.
+2. For each element, compute the GCD of the current element and the maximum element using the Euclidean Algorithm.
+3. Store all computed GCD values in a new array.
+4. Sort the GCD array.
+5. Use two pointers:
+
+   * `left` at the beginning.
+   * `right` at the end.
+6. Compute the GCD of the paired elements and add it to the answer.
+7. Continue until all valid pairs have been processed.
+8. Return the final GCD sum.
+
+The Euclidean Algorithm is implemented recursively, allowing each GCD computation to be performed efficiently.
+
+**Topic:** Math, Sorting
+**Technique Used:** Recursion (Euclidean Algorithm), Sorting, Two Pointers
+
+
+## Time Complexity
+* O(n log n + n log M)
+
+  * `O(n log M)` for GCD computations (`M` is the maximum element).
+  * `O(n log n)` for sorting.
+  * `O(n)` for the two-pointer traversal.
+
+## Space Complexity
+* O(n)
+
+  * Extra space is used for the `prefixGcd` array.
+
+---
+
+# 1979. Find Greatest Common Divisor of Array
+
+## Problem Statement
+
+Given an integer array `nums`, return the **greatest common divisor (GCD)** of the smallest number and the largest number in the array.
+
+The **greatest common divisor** of two numbers is the largest positive integer that divides both numbers without leaving a remainder.
+
+## Approach
+
+### Math + Recursion (Euclidean Algorithm)
+
+1. Traverse the array to find:
+
+   * The minimum element.
+   * The maximum element.
+2. Compute the GCD of these two numbers using the **Euclidean Algorithm**.
+3. The recursive GCD function works as follows:
+
+   * If `b == 0`, return `a`.
+   * Otherwise, recursively compute `gcd(b, a % b)`.
+4. Return the computed GCD.
+
+The Euclidean Algorithm efficiently computes the greatest common divisor in logarithmic time.
+
+**Topic:** Math
+**Technique Used:** Recursion (Euclidean Algorithm)
+
+## Time Complexity
+* O(n + log(min(a, b)))
+
+  * `O(n)` to find the minimum and maximum elements.
+  * `O(log(min(a, b)))` to compute the GCD.
+
+## Space Complexity
+* O(log(min(a, b)))
+
+  * Due to the recursion call stack of the Euclidean Algorithm.
+
+---
+
+# 1822. Sign of the Product of an Array
+
+## Problem Statement
+
+There is a function `signFunc(x)` that returns:
+
+* `1` if `x` is positive.
+* `-1` if `x` is negative.
+* `0` if `x` is equal to `0`.
+
+Given an integer array `nums`, return the sign of the product of all elements in the array.
+
+## Approach
+
+### Counting Negative Numbers
+
+1. Traverse the entire array.
+2. If any element is `0`, immediately return `0` because the product will be zero.
+3. Count the number of negative elements.
+4. If the count of negative numbers is odd, the product is negative, so return `-1`.
+5. If the count is even, the product is positive, so return `1`.
+
+There is no need to calculate the actual product. We only need to determine whether the number of negative elements is odd or even.
+
+**Topic:** Math, Arrays
+**Technique Used:** Counting
+
+## Time Complexity
+
+* O(n)
+* The array is traversed once.
+
+## Space Complexity
+
+* O(1)
+* Only one counter variable is used.
+
+---
+
+# 3622. Check Divisibility by Digit Sum and Product
+
+## Problem Statement
+
+You are given a positive integer `n`.
+
+Let:
+
+* `sum` be the sum of all digits of `n`.
+* `product` be the product of all digits of `n`.
+
+Return `true` if `n` is divisible by `sum + product`; otherwise, return `false`.
+
+## Approach
+
+### Digit Manipulation
+
+1. Store the original value of `n` in `p`.
+2. Initialize:
+
+   * `sum = 0` to store the sum of digits.
+   * `product = 1` to store the product of digits.
+3. Extract each digit using `p % 10`.
+4. Add the digit to `sum`.
+5. Multiply the digit with `product`.
+6. Remove the last digit using `p / 10`.
+7. Calculate `total = sum + product`.
+8. Check whether `n` is divisible by `total`.
+9. Return the result.
+
+**Topic:** Math
+**Technique Used:** Digit Manipulation
+
+## Time Complexity
+
+* **O(d)**, where `d` is the number of digits in `n`.
+
+## Space Complexity
+
+* **O(1)**
+* Only a constant number of variables are used.
+
+---
+
+# 3827. Count Monobit Integers
+
+## Problem Statement
+
+You are given an integer `n`.
+
+An integer is called **Monobit** if all bits in its binary representation are the same.
+
+For example:
+
+* `0 → 0` → Monobit
+* `1 → 1` → Monobit
+* `3 → 11` → Monobit
+* `7 → 111` → Monobit
+* `5 → 101` → Not Monobit
+
+Return the number of Monobit integers in the range `[0, n]`, inclusive.
+
+## Approach
+
+### Binary Conversion + Counting
+
+1. Iterate through every integer from `0` to `n`.
+2. Convert each integer into its binary representation using `Integer.toBinaryString()`.
+3. Count the number of `0`s and `1`s in the binary representation.
+4. If all bits are `0` or all bits are `1`, increment the answer.
+5. Return the total count.
+
+This approach directly checks every number in the given range and determines whether its binary representation contains only one type of bit.
+
+**Topic:** Bit Manipulation, Enumeration
+**Technique Used:** Binary Conversion + Counting
+
+## Time Complexity
+
+* **O(n log n)**
+* There are `n` numbers to check, and each binary representation can contain up to `O(log n)` bits.
+
+## Space Complexity
+
+* **O(log n)**
+* The binary representation of each number requires up to `O(log n)` space.
+
+---
+
+# 3828. Final Element After Subarray Deletions
+
+## Problem Statement
+
+You are given an integer array `nums`.
+
+Alice and Bob play a game in turns, with Alice playing first. In each turn, the current player removes a non-empty subarray that is smaller than the current array, and the remaining elements form the new array.
+
+* Alice wants to maximize the final remaining element.
+* Bob wants to minimize the final remaining element.
+
+Both players play optimally.
+
+Return the value of the final remaining element.
+
+## Approach
+
+### Mathematical Observation
+
+The key observation is that only the **first and last elements** can determine the final answer.
+
+1. Alice plays first and can remove the middle portion of the array.
+2. This allows her to preserve the two endpoints.
+3. Any middle element cannot be guaranteed to survive because Bob can remove it on his turn.
+4. Therefore, the final value that Alice can guarantee is the larger of the two endpoints.
+5. Return `Math.max(nums[0], nums[n - 1])`.
+
+Thus, no simulation or complex game-theory algorithm is required.
+
+**Topic:** Math, Arrays
+**Technique Used:** Mathematical Observation
+
+## Time Complexity
+
+* **O(1)**
+* Only the first and last elements are accessed and compared.
+
+## Space Complexity
+
+* **O(1)**
+* No extra data structure is used.
+
+---
+
+# 3875. Construct Uniform Parity Array I
+
+## Problem Statement
+
+You are given an array `nums1` of distinct integers.
+
+You need to construct another array `nums2` of the same length such that all elements of `nums2` are either **all odd** or **all even**.
+
+For each index `i`, you can choose either:
+
+* `nums2[i] = nums1[i]`
+* `nums2[i] = nums1[i] - nums1[j]`, where `j != i`
+
+Return `true` if it is possible to construct such an array.
+
+## Approach
+
+### Mathematical Observation
+
+The answer is always `true`.
+
+* If all elements of `nums1` already have the same parity, we can simply choose `nums2[i] = nums1[i]`.
+* If the array contains both odd and even numbers, we can make every element odd:
+
+  * Keep odd elements unchanged.
+  * For every even element, subtract an odd element.
+  * `even - odd = odd`.
+
+Therefore, regardless of the contents of the array, a valid `nums2` can always be constructed.
+
+**Topic:** Math, Arrays
+**Technique Used:** Parity + Mathematical Observation
+
+## Time Complexity
+
+* **O(1)**
+* The solution directly returns `true` without traversing the array.
+
+## Space Complexity
+
+* **O(1)**
+* No extra space is used.
+
+---
+
+# 3870. Count Commas in Range
+
+## Problem Statement
+
+Given an integer `n`, return the total number of commas used when writing all integers from `1` to `n` in standard number formatting.
+
+A comma is inserted after every three digits from the right. Numbers with fewer than four digits contain no commas.
+
+## Approach
+
+The key observation is that, according to the constraints `1 <= n <= 10^5`, no number can contain more than one comma.
+
+* Numbers from `1` to `999` contain no commas.
+* Every number from `1000` to `n` contains exactly one comma.
+
+Therefore, if `n < 1000`, the answer is `0`.
+
+Otherwise, the number of integers in the range `[1000, n]` is:
+
+`n - 1000 + 1 = n - 999`
+
+So the answer can be calculated directly without using any loop.
+
+## Topic + Technique Used
+
+**Topic:** Math
+**Technique:** Mathematical Observation + Range Counting
+
+## Time Complexity
+
+**O(1)**
+
+The solution performs only a condition check and a constant-time arithmetic calculation.
+
+## Space Complexity
+
+**O(1)**
+
+No additional data structures are used.
+
+---
+

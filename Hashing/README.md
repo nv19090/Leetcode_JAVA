@@ -90,3 +90,253 @@ Using a `HashMap` allows us to count frequencies efficiently while preserving th
 
 ---
 
+# 1331. Rank Transform of an Array
+
+## Problem Statement
+
+Given an integer array `arr`, replace each element with its rank.
+
+The rank represents how large the element is. The rank has the following rules:
+
+* Rank is an integer starting from `1`.
+* The larger the element, the larger the rank.
+* If two elements are equal, they must have the same rank.
+* Ranks should be as small as possible.
+
+Return the rank-transformed array.
+
+## Approach
+
+### Sorting + HashMap
+
+1. Copy all elements of the array into a new list.
+2. Sort the copied list in non-decreasing order.
+3. Traverse the sorted list:
+
+   * Assign ranks starting from `1`.
+   * Store each unique element and its corresponding rank in a `HashMap`.
+4. Traverse the original array:
+
+   * Replace each element with its rank using the `HashMap`.
+5. Return the transformed array.
+
+Using a sorted copy allows ranks to be assigned in increasing order, while the `HashMap` enables constant-time lookup for each original element.
+
+**Topic:** Arrays, Sorting, Hashing
+**Technique Used:** Sorting + HashMap
+
+## Time Complexity
+* O(n log n)
+
+  * Sorting the copied array takes **O(n log n)**.
+  * Building the map and constructing the answer each take **O(n)**.
+
+## Space Complexity
+* O(n)
+
+  * Extra space is used for the copied list, `HashMap`, and output array.
+
+---
+
+# 128. Longest Consecutive Sequence
+
+## Problem Statement
+
+Given an unsorted array of integers `nums`, return the length of the longest consecutive elements sequence.
+
+A consecutive sequence consists of numbers that differ by exactly `1`.
+
+You must return the length of the longest consecutive sequence present in the array.
+
+## Approach
+
+### HashSet + Sorting
+
+1. Insert all elements into a `HashSet` to remove duplicate values.
+2. Convert the `HashSet` into an array.
+3. Sort the array in ascending order.
+4. Traverse the sorted array:
+
+   * If the current element is exactly `1` greater than the previous element, extend the current consecutive sequence.
+   * Otherwise, update the maximum sequence length and start a new sequence.
+5. Return the length of the longest consecutive sequence found.
+
+Using a `HashSet` eliminates duplicates before sorting, ensuring consecutive elements are counted correctly.
+
+**Topic:** Arrays, Hashing, Sorting
+**Technique Used:** HashSet + Sorting
+
+## Time Complexity
+
+* O(n log n)
+
+  * Inserting elements into the `HashSet` takes **O(n)**.
+  * Sorting the unique elements takes **O(n log n)**.
+  * Traversing the sorted array takes **O(n)**.
+
+## Space Complexity
+
+* O(n)
+
+  * Extra space is used for the `HashSet` and the array of unique elements.
+
+---
+
+# 347. Top K Frequent Elements
+
+## Problem Statement
+
+Given an integer array `nums` and an integer `k`, return the `k` most frequent elements.
+
+You may return the answer in any order.
+
+## Approach
+
+### HashMap + Sorting
+
+1. Traverse the array and use a `HashMap` to store the frequency of each element.
+2. Convert the `HashMap` entries into a list.
+3. Sort the list in descending order based on the frequency of each element.
+4. Traverse the sorted list and collect the first `k` elements.
+5. Convert the result list into an array and return it.
+
+The `HashMap` efficiently counts frequencies, while sorting ensures that the most frequent elements appear first.
+
+**Topic:** Hashing, Sorting
+**Technique Used:** HashMap + Sorting
+
+## Time Complexity
+
+* **O(n + m log m)**
+
+  * `O(n)` to count frequencies.
+  * `O(m log m)` to sort the unique elements, where `m` is the number of distinct elements.
+  * `O(k)` to build the answer.
+Note: Time complexity can be improve by using Bucket Sort or either Quick Sort...
+
+## Space Complexity
+
+* **O(m)**
+
+  * `HashMap`, list of entries, and result array require extra space, where `m` is the number of distinct elements.
+
+---
+
+# 3731. Find Missing Elements
+
+## Problem Statement
+
+Given an integer array `nums`, return a list of all missing integers between the minimum and maximum elements of the array (inclusive).
+
+The returned list should contain every integer that does not appear in the array.
+
+## Approach
+
+### HashMap + Linear Traversal
+
+1. Traverse the array to determine:
+
+   * The minimum element.
+   * The maximum element.
+2. Store the frequency of each element in a `HashMap`.
+3. Iterate through every integer from the minimum value to the maximum value.
+4. If a number is not present in the `HashMap`, add it to the answer list.
+5. Return the list of missing integers.
+
+The `HashMap` enables constant-time lookups while checking whether each number in the range exists.
+
+**Topic:** Arrays, Hashing
+**Technique Used:** HashMap
+
+## Time Complexity
+* **O(n + (max - min + 1))**
+
+  * `O(n)` to find the minimum, maximum, and build the frequency map.
+  * `O(max - min + 1)` to identify all missing elements.
+
+## Space Complexity
+* **O(n)**
+
+  * Extra space is used for the `HashMap` and the output list.
+
+---
+
+# 2958. Length of Longest Subarray With at Most K Frequency
+
+## Problem Statement
+
+Given an integer array `nums` and an integer `k`, return the length of the longest subarray in which the frequency of every element is **at most `k`**.
+
+A subarray is a contiguous part of the array.
+
+## Approach
+
+### Sliding Window + HashMap
+
+1. Use two pointers:
+
+   * `left` → left boundary of the window.
+   * `right` → right boundary of the window.
+2. Use a `HashMap` to store the frequency of each element inside the current window.
+3. Move `right` through the array and increase the frequency of `nums[right]`.
+4. If the frequency of `nums[right]` becomes greater than `k`:
+
+   * Move `left` forward.
+   * Decrease the frequency of `nums[left]`.
+   * Remove the element from the map if its frequency becomes `0`.
+5. Once the window becomes valid, calculate its length.
+6. Update the maximum length.
+7. Continue until the entire array has been processed.
+
+The sliding window ensures that every element in the current subarray occurs at most `k` times.
+
+**Topic:** Arrays, Hashing
+**Technique Used:** Sliding Window + HashMap
+
+## Time Complexity
+
+* **O(n)**
+* Each element is added to and removed from the sliding window at most once.
+
+## Space Complexity
+
+* **O(n)**
+* In the worst case, the `HashMap` can contain all distinct elements.
+
+---
+
+# 3718. Smallest Missing Multiple of K
+
+## Problem Statement
+
+Given an integer array `nums` and an integer `k`, return the smallest positive multiple of `k` that is missing from `nums`.
+
+A multiple of `k` is any positive integer divisible by `k`.
+
+## Approach
+
+### HashMap + Enumeration
+
+1. Traverse the array and store each element in a `HashMap`.
+2. Find the maximum element in the array.
+3. Start checking the positive multiples of `k` from `k`.
+4. For each multiple `i * k`:
+
+   * If it exists in the `HashMap`, continue to the next multiple.
+   * Otherwise, return it as the smallest missing multiple.
+5. If no missing multiple is found within the checked range, return `-1`.
+
+The `HashMap` provides efficient membership checking while the multiples of `k` are checked in increasing order.
+
+**Topic:** Arrays, Hashing
+**Technique Used:** HashMap + Enumeration
+
+## Time Complexity
+
+* O(n) on average.
+* Building the `HashMap` takes `O(n)`, and the number of multiples checked is bounded by the input constraints.
+
+## Space Complexity
+
+* O(n)
+* The `HashMap` stores the elements of the array.

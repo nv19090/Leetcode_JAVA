@@ -242,4 +242,89 @@ The greedy strategy ensures that every element is as large as possible while mai
 
 ---
 
+# Longest Subsequence With Non-Zero XOR
+
+## Problem Statement
+
+Given an integer array `nums`, find the maximum length of a subsequence whose bitwise XOR is **non-zero**.
+
+A subsequence can be formed by deleting zero or more elements while maintaining the relative order of the remaining elements.
+
+If no non-empty subsequence has a non-zero XOR, return `0`.
+
+## Approach
+
+### Greedy + Bit Manipulation
+
+1. Calculate the XOR of all elements in the array.
+2. Count the number of non-zero elements.
+3. If all elements are zero, return `0` because the XOR of any subsequence will be `0`.
+4. If the XOR of the entire array is non-zero:
+
+   * The complete array itself is a valid subsequence.
+   * Return `n`.
+5. If the total XOR is zero:
+
+   * Remove one element from the subsequence.
+   * Traverse the array and remove the first element that makes the remaining XOR non-zero.
+   * Decrease the subsequence length by `1`.
+6. Return the resulting maximum length.
+
+The greedy idea is to keep as many elements as possible and remove only one element when the XOR of the complete array is zero.
+
+**Topic:** Bit Manipulation, Arrays
+**Technique Used:** Greedy + XOR
+
+## Time Complexity
+
+* O(n)
+* The array is traversed a constant number of times.
+
+## Space Complexity
+
+* O(1)
+* Only a constant number of variables are used.
+
+---
+
+# 2091. Removing Minimum and Maximum From Array
+
+## Problem Statement
+
+You are given a 0-indexed array of distinct integers `nums`.
+
+The array contains a minimum element and a maximum element. Your goal is to remove both of them.
+
+In one deletion, you can remove an element from either the **front** or the **back** of the array.
+
+Return the minimum number of deletions required to remove both the minimum and maximum elements.
+
+## Approach
+
+### Greedy + Index Calculation
+
+1. Traverse the array to find the minimum and maximum values.
+2. Find the indices of both elements.
+3. There are three possible ways to remove them:
+
+   * Remove both from the **front**.
+   * Remove both from the **back**.
+   * Remove one from the **front** and the other from the **back**.
+4. Calculate the number of deletions for each case.
+5. Return the minimum of the three possibilities.
+
+The solution only depends on the positions of the minimum and maximum elements, so there is no need to actually perform the deletions.
+
+**Topic:** Arrays, Greedy
+**Technique Used:** Index Calculation + Greedy
+
+## Time Complexity
+
+* **O(n)**
+* The array is traversed a constant number of times.
+
+## Space Complexity
+
+* **O(1)**
+* Only a constant number of variables are used.
 

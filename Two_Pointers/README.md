@@ -192,4 +192,46 @@ The algorithm ensures that only alphabetic characters are reversed while all non
 
 ---
 
+# 680. Valid Palindrome II
+
+## Problem Statement
+
+Given a string `s`, return `true` if the string can become a palindrome after deleting **at most one character**.
+
+A palindrome is a string that reads the same forward and backward.
+
+## Approach
+
+### Two Pointers
+
+1. Initialize two pointers:
+
+   * `i` at the beginning of the string.
+   * `j` at the end of the string.
+2. Compare the characters at `i` and `j`.
+3. If they are equal, move both pointers toward the center.
+4. If they are different:
+
+   * Try skipping the character at `j`.
+   * If this approach fails, restart and try skipping the character at `i`.
+5. If either possibility forms a palindrome, return `true`.
+6. Otherwise, return `false`.
+
+The solution uses two-pointer traversal and allows at most one character to be skipped.
+
+**Topic:** Strings, Two Pointers
+**Technique Used:** Two Pointers
+
+## Time Complexity
+
+* O(n)
+* The string is traversed at most twice.
+
+## Space Complexity
+
+* O(1)
+* Only a constant number of variables are used.
+
+---
+
 
