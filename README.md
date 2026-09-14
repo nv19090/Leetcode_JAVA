@@ -76,8 +76,8 @@ The table below shows the number of LeetCode problems solved in each Data Struct
 | Two Pointers   |               6 |
 | Sliding Window |               2 |
 | Hashing        |               9 |
-| Greedy         |               7 |
-| Math           |               9 |
+| Greedy         |               8 |
+| Math           |              13 |
 | String         |               4 |
 | Sorting        |               1 |
 | Recursion      |               3 |
