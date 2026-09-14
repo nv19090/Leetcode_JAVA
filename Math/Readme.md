@@ -478,3 +478,47 @@ No additional data structures are used.
 
 ---
 
+# 836. Rectangle Overlap
+
+## Problem Statement
+
+Given two axis-aligned rectangles represented by `rec1` and `rec2`, determine whether the two rectangles overlap.
+
+Each rectangle is represented as `[x1, y1, x2, y2]`, where:
+
+* `(x1, y1)` is the bottom-left corner.
+* `(x2, y2)` is the top-right corner.
+
+The rectangles must have a positive area of overlap to be considered overlapping.
+
+## Approach
+
+Use the coordinates of the four sides of both rectangles to directly check whether their horizontal and vertical ranges overlap.
+
+Two rectangles overlap if:
+
+* The left side of `rec1` is before the right side of `rec2`.
+* The left side of `rec2` is before the right side of `rec1`.
+* The bottom side of `rec1` is below the top side of `rec2`.
+* The bottom side of `rec2` is below the top side of `rec1`.
+
+All four conditions must be true.
+
+If any condition is false, the rectangles either do not overlap or only touch at their boundary.
+
+## Topic + Technique Used
+
+**Topic:** Math, Geometry
+**Technique:** Coordinate Geometry + Condition Checking
+
+## Time Complexity
+
+**O(1)**
+
+Only a fixed number of coordinate comparisons are performed.
+
+## Space Complexity
+
+**O(1)**
+
+No additional data structures are used.
