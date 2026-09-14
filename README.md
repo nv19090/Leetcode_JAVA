@@ -35,7 +35,7 @@ My goal is to strengthen my understanding of Data Structures and Algorithms, imp
 | -------------- |----------|
 | Language       | Java     |
 | Platform       | LeetCode |
-| Total Problems | 70       |
+| Total Problems | 75       |
 | Topics Covered | 14       |
 
 ---
