@@ -522,3 +522,46 @@ Only a fixed number of coordinate comparisons are performed.
 **O(1)**
 
 No additional data structures are used.
+
+---
+
+# 1232. Check If It Is a Straight Line
+
+## Problem Statement
+
+Given an array of coordinates where `coordinates[i] = [xᵢ, yᵢ]` represents a point, return `true` if all the points lie on the same straight line. Otherwise, return `false`.
+
+## Approach
+
+Use the cross-multiplication method to check whether consecutive points have the same slope.
+
+1. Traverse the coordinates using three consecutive points at a time.
+
+2. Calculate the differences in the x and y coordinates.
+
+3. Compare the slopes using cross multiplication to avoid floating-point calculations:
+
+   `(y2 - y1) * (x3 - x2) == (y3 - y2) * (x2 - x1)`
+
+4. If the equality fails for any three consecutive points, return `false`.
+
+5. If all points satisfy the condition, return `true`.
+
+This approach also handles vertical lines without division by zero.
+
+## Topic + Technique Used
+
+**Topic:** Math, Geometry
+**Technique:** Cross Multiplication + Slope Comparison + Linear Traversal
+
+## Time Complexity
+
+**O(n)**
+
+The loop checks each consecutive group of three points, resulting in a linear traversal of the coordinates.
+
+## Space Complexity
+
+**O(1)**
+
+Only a constant number of variables are used.
