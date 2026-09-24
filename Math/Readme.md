@@ -565,3 +565,42 @@ The loop checks each consecutive group of three points, resulting in a linear tr
 **O(1)**
 
 Only a constant number of variables are used.
+
+---
+
+# 3550. Smallest Index With Digit Sum Equal to Index
+
+## Problem Statement
+
+Given an integer array `nums`, return the smallest index `i` such that the sum of the digits of `nums[i]` is equal to `i`.
+
+If no such index exists, return `-1`.
+
+## Approach
+
+### Digit Sum + Linear Search
+
+1. Traverse the array from index `0`.
+2. For each `nums[i]`, calculate the sum of its digits.
+3. Compare the digit sum with the current index `i`.
+4. If the digit sum equals `i`, return that index immediately.
+5. If no index satisfies the condition, return `-1`.
+
+The helper method `checking()` calculates the digit sum by repeatedly taking the last digit using `% 10` and removing it using `/ 10`.
+
+**Topic:** Math, Arrays
+**Technique Used:** Digit Sum + Linear Search
+
+## Time Complexity
+
+**O(n × d)**
+
+Where `n` is the length of the array and `d` is the maximum number of digits in an element.
+
+## Space Complexity
+
+**O(1)**
+
+Only a constant number of variables are used.
+
+---
