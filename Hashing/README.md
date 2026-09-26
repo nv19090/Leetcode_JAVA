@@ -340,3 +340,51 @@ The `HashMap` provides efficient membership checking while the multiples of `k` 
 
 * O(n)
 * The `HashMap` stores the elements of the array.
+
+---
+
+# 1807. Evaluate the Bracket Pairs of a String
+
+## Problem Statement
+
+You are given a string `s` containing lowercase English letters and bracket pairs of the form `(key)`.
+
+You are also given a list `knowledge`, where each element contains a key and its corresponding value.
+
+Replace every bracketed key in `s` with its value from `knowledge`.
+
+If a key does not exist in `knowledge`, replace it with `?`.
+
+Return the resulting string.
+
+## Approach
+
+### HashMap + String Traversal
+
+1. Store all key-value pairs from `knowledge` in a `HashMap`.
+2. Traverse the string character by character.
+3. When an opening bracket `(` is found:
+   - Find the corresponding closing bracket `)`.
+   - Extract the key using `substring()`.
+   - Check whether the key exists in the `HashMap`.
+   - Append its value if found; otherwise append `?`.
+4. Move the index to the closing bracket.
+5. For normal characters, directly append them to the `StringBuilder`.
+6. Return the constructed string.
+
+Using a `HashMap` provides efficient key-value lookup, while `StringBuilder` efficiently constructs the resulting string.
+
+**Topic:** String, Hashing  
+**Technique Used:** HashMap + String Traversal + StringBuilder
+
+## Time Complexity
+
+**O(n + k)**
+
+Where `n` is the length of the string and `k` is the total size of the `knowledge` list. The string is traversed linearly, with average O(1) HashMap lookups.
+
+## Space Complexity
+
+**O(k + n)**
+
+The `HashMap` stores the knowledge pairs and the `StringBuilder` stores the resulting string.
