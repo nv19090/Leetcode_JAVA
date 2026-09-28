@@ -388,3 +388,59 @@ Where `n` is the length of the string and `k` is the total size of the `knowledg
 **O(k + n)**
 
 The `HashMap` stores the knowledge pairs and the `StringBuilder` stores the resulting string.
+
+---
+
+# 4065. Rearrange Array by Removing Distinct Values
+
+## Problem Statement
+
+You are given an integer array `nums`.
+
+Start with an empty array `ans`. Repeat the following operation until `nums` becomes empty:
+
+- Identify all distinct values currently present in `nums`.
+- Remove one occurrence of every distinct value.
+- Append those values to `ans` in ascending order.
+
+Return the resulting array `ans`.
+
+---
+
+## Approach
+
+### HashMap + Frequency Counting + Sorting Order
+
+1. Use a `HashMap` to store the frequency of every distinct value in `nums`.
+2. Find the minimum and maximum values in the array.
+3. Create a result array `ans`.
+4. While there are still elements to place:
+   - Traverse all values from `mn` to `mx` in ascending order.
+   - If a value exists in the `HashMap` and its frequency is greater than `0`, add it to `ans`.
+   - Decrease its frequency by `1`.
+5. Repeat the traversal until all elements are added to `ans`.
+6. Return the resulting array.
+
+Each complete traversal from `mn` to `mx` represents one operation of removing one occurrence of every currently distinct value.
+
+**Topic:** Arrays, Hashing, Sorting  
+**Technique Used:** Frequency Counting + HashMap + Ordered Traversal
+
+---
+
+## Time Complexity
+
+**O(n + k × R)**
+
+Where:
+- `n` = number of elements in `nums`
+- `k` = maximum frequency of any value
+- `R = mx - mn + 1` = range of values
+
+The array is traversed to build the frequency map and find the range. The range from `mn` to `mx` is then traversed once for each round.
+
+## Space Complexity
+
+**O(n)**
+
+The `HashMap` can store up to `n` distinct values, and the result array requires `O(n)` space.
