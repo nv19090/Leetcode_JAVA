@@ -35,8 +35,8 @@ My goal is to strengthen my understanding of Data Structures and Algorithms, imp
 | -------------- |----------|
 | Language       | Java     |
 | Platform       | LeetCode |
-| Total Problems | 75       |
-| Topics Covered | 14       |
+| Total Problems | 81       |
+| Topics Covered | 15       |
 
 ---
 
@@ -47,6 +47,7 @@ LeetCode-Java
 │
 ├── Arrays_Basics
 ├── Binary_Search
+├── Dynamic Programming
 ├── Greedy
 ├── Hashing
 ├── Linked_List
@@ -73,11 +74,12 @@ The table below shows the number of LeetCode problems solved in each Data Struct
 | :----- |----------------:|
 | Arrays         |               7 |
 | Binary Search  |               5 |
+| Dynamic Progm  |               2 |
 | Two Pointers   |               6 |
 | Sliding Window |               2 |
-| Hashing        |               9 |
+| Hashing        |              11 |
 | Greedy         |               8 |
-| Math           |              13 |
+| Math           |              15 |
 | String         |               4 |
 | Sorting        |               1 |
 | Recursion      |               3 |
