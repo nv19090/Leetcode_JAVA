@@ -97,3 +97,46 @@ The stack maintains indices whose next warmer temperature has not yet been found
 
 ---
 
+# 32. Longest Valid Parentheses
+
+## Problem Statement
+
+Given a string `s` containing only `'('` and `')'`, find the length of the longest valid parentheses substring.
+
+A valid parentheses string has properly matched and nested opening and closing parentheses.
+
+## Approach
+
+### Stack + Index Tracking
+
+1. Use a `Stack<Integer>` to store indices.
+2. Initially push `-1` into the stack as a base index.
+3. Traverse the string from left to right.
+4. If the current character is `'('`, push its index onto the stack.
+5. If the current character is `')'`:
+   - Pop the top index.
+   - If the stack becomes empty, push the current index as the new base index.
+   - Otherwise, calculate the length of the current valid substring using:
+     `j - st.peek()`
+6. Update `ans` with the maximum length found.
+7. Return `ans`.
+
+The stack stores indices rather than characters, allowing the length of every valid substring to be calculated directly.
+
+**Topic:** Stack, String  
+**Technique Used:** Stack + Index Tracking
+
+## Time Complexity
+
+**O(n)**
+
+The string is traversed once, and every index is pushed and popped from the stack at most once.
+
+## Space Complexity
+
+**O(n)**
+
+In the worst case, the stack can contain O(n) indices.
+
+---
+
