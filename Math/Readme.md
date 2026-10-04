@@ -604,3 +604,43 @@ Where `n` is the length of the array and `d` is the maximum number of digits in 
 Only a constant number of variables are used.
 
 ---
+
+# 4070. Minimum Rotations to Dial a Number
+
+## Problem Statement
+
+Given a string `s` consisting of digits from `0` to `9`, calculate the minimum number of rotations required to dial all digits of `s` in order.
+
+The dial is circular, so `0` and `9` are adjacent. The pointer initially starts at `0`.
+
+For each digit, the pointer can rotate in either direction. Return the minimum total number of rotations required.
+
+## Approach
+
+### Circular Distance
+
+1. Initialize `prev = 0` because the pointer starts at digit `0`.
+2. Traverse the string from left to right.
+3. Convert each character into its numeric value.
+4. Calculate the absolute difference between the current digit and the previous digit.
+5. There are two possible ways to reach the current digit:
+   - Direct distance: `diff`
+   - Circular distance: `10 - diff`
+6. Add the smaller distance to `ans`.
+7. Update `prev` to the current digit.
+8. Return the total number of rotations.
+
+**Topic:** Math, String  
+**Technique Used:** Circular Distance + Greedy Choice
+
+## Time Complexity
+
+**O(n)**
+
+The string is traversed once.
+
+## Space Complexity
+
+**O(1)**
+
+Only a constant number of variables are used.
