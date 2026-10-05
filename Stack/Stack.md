@@ -140,3 +140,45 @@ In the worst case, the stack can contain O(n) indices.
 
 ---
 
+# 856. Score of Parentheses
+
+## Problem Statement
+
+Given a balanced parentheses string `s`, calculate its score according to these rules:
+
+- `()` has a score of `1`.
+- `AB` has a score of `A + B`, where `A` and `B` are balanced parentheses strings.
+- `(A)` has a score of `2 * A`.
+
+Return the total score of the parentheses string.
+
+## Approach
+
+### Stack + Multiplication Tracking
+
+1. Use a `Stack<Integer>` to keep track of the score multiplier for nested parentheses.
+2. Traverse the string character by character.
+3. When an opening parenthesis `'('` is encountered:
+   - If the stack is empty, push `1`.
+   - Otherwise, push `2 * st.peek()` because the new pair is nested one level deeper.
+4. When a closing parenthesis `')'` is encountered:
+   - If the previous opening parenthesis forms a primitive `()`, add the current stack value to `count`.
+   - Pop the corresponding value from the stack.
+5. Return the accumulated `count`.
+
+The `value` flag is used to identify whether the current closing parenthesis directly closes an opening parenthesis.
+
+**Topic:** Stack, String  
+**Technique Used:** Stack + Nested Score Tracking
+
+## Time Complexity
+
+**O(n)**
+
+The string is traversed once, and each parenthesis is pushed and popped from the stack at most once.
+
+## Space Complexity
+
+**O(n)**
+
+In the worst case, the stack can contain O(n) elements.
