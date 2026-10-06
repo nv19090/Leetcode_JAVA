@@ -182,3 +182,44 @@ The string is traversed once, and each parenthesis is pushed and popped from the
 **O(n)**
 
 In the worst case, the stack can contain O(n) elements.
+
+---
+
+# 921. Minimum Add to Make Parentheses Valid
+
+## Problem Statement
+
+Given a string `s` containing only `'('` and `')'`, return the minimum number of parentheses that must be added to make the string valid.
+
+A valid parentheses string has every opening parenthesis matched with a corresponding closing parenthesis.
+
+## Approach
+
+### Stack + Unmatched Parentheses
+
+1. Use a `Stack<Character>` to store unmatched opening parentheses.
+2. Traverse the string character by character.
+3. If the current character is `'('`, push it into the stack.
+4. If the current character is `')'`:
+   - If the stack is empty, there is no matching opening parenthesis, so increment `op`.
+   - Otherwise, remove the matching `'('` from the stack.
+5. After processing the entire string:
+   - `op` represents unmatched closing parentheses.
+   - `st.size()` represents unmatched opening parentheses.
+6. The total number of additions required is:
+   `op + st.size()`.
+
+**Topic:** Stack, String  
+**Technique Used:** Stack + Matching Parentheses
+
+## Time Complexity
+
+**O(n)**
+
+The string is traversed once, and each parenthesis is pushed and popped at most once.
+
+## Space Complexity
+
+**O(n)**
+
+In the worst case, all characters can be opening parentheses and stored in the stack.
