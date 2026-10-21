@@ -328,3 +328,41 @@ The solution only depends on the positions of the minimum and maximum elements, 
 * **O(1)**
 * Only a constant number of variables are used.
 
+---
+
+# 2789. Largest Element in an Array after Merge Operations
+
+## Problem Statement
+
+Given a 0-indexed integer array `nums`, you can repeatedly merge two adjacent elements if the left element is less than or equal to the right element. The two elements are replaced by their sum.
+
+Return the maximum possible value of the largest element in the array after performing zero or more merge operations.
+
+## Approach
+
+### Greedy + Right-to-Left Traversal
+
+1. Initialize `sum` with the last element of `nums`.
+2. Traverse the array from right to left, starting at index `n - 2`.
+3. For each element:
+   - If `nums[i] <= sum`, merge it with the accumulated sum by adding it to `sum`.
+   - Otherwise, reset `sum` to `nums[i]`, starting a new merge group.
+4. Update `ans` with the maximum value of `sum` at each step.
+5. Return `ans`.
+
+Processing from right to left allows the solution to greedily combine elements whenever the merge condition is satisfied.
+
+**Topic:** Arrays, Greedy  
+**Technique Used:** Greedy + Right-to-Left Traversal + Running Sum
+
+## Time Complexity
+
+**O(n)**
+
+The array is traversed once from right to left.
+
+## Space Complexity
+
+**O(1)**
+
+Only a constant number of variables are used.
