@@ -37,3 +37,45 @@ Sorting ensures that the smallest and largest 5% of the elements are positioned 
 * **O(1)** (excluding the space used by the sorting algorithm).
 
 ---
+
+# 3551. Minimum Swaps to Sort by Digit Sum
+
+## Problem Statement
+
+Given an integer array `nums`, sort its elements by digit sum in ascending order. If two elements have the same digit sum, sort them by their numeric values in ascending order.
+
+Return the minimum number of swaps required to rearrange the original array into this sorted order.
+
+## Approach
+
+### HashMap + Custom Sorting + Cycle Detection
+
+1. Calculate the digit sum of every element and store it in a `HashMap`.
+2. Convert the map entries into a list.
+3. Sort the list using a custom comparator:
+   - First, compare digit sums in ascending order.
+   - If the digit sums are equal, compare the original numbers in ascending order.
+4. Store the sorted numbers in an array.
+5. Create a position map to record the target index of each value.
+6. Use a `visited` array to detect cycles in the permutation from the original array to the sorted array.
+7. Count the cycles and calculate the minimum swaps using `n - cycles`.
+
+Cycle detection determines the minimum number of swaps required to place all elements in their correct positions.
+
+## Topic + Technique Used
+
+**Topic:** Sorting, Hashing, Arrays
+
+**Technique Used:** Digit Sum + Custom Comparator + Cycle Detection
+
+## Time Complexity
+
+**O(n log n + n × d)**
+
+Where `n` is the array length and `d` is the maximum number of digits in an element. Sorting takes O(n log n), and calculating digit sums takes O(n × d).
+
+## Space Complexity
+
+**O(n)**
+
+The `HashMap`, sorted list, position map, and visited array require linear additional space.
