@@ -644,3 +644,55 @@ The string is traversed once.
 **O(1)**
 
 Only a constant number of variables are used.
+
+---
+
+# 4092. Binary Digit Score
+
+## Problem Statement
+
+Given two positive integers `a` and `b`, calculate their score based on the number of set bits (bits equal to `1`) in their binary representations.
+
+Let:
+- `s1` be the number of set bits in `a`.
+- `s2` be the number of set bits in `b`.
+
+The score is defined as:
+- If `s1 >= s2`, return `s1 * s2`.
+- Otherwise, return `s2 / s1` using integer division.
+
+## Approach
+
+### Bit Manipulation + Counting Set Bits
+
+1. Initialize `s1` and `s2` to `0`.
+2. Count the set bits of `a`:
+   - Check whether the last bit is `1` using `a % 2`.
+   - If it is, increment `s1`.
+   - Right-shift `a` by one position using `a >>= 1`.
+   - Repeat until `a` becomes `0`.
+3. Repeat the same process for `b` to calculate `s2`.
+4. Compare the two counts:
+   - If `s1 >= s2`, return `s1 * s2`.
+   - Otherwise, return `s2 / s1`.
+5. Return the calculated score.
+
+Right-shifting removes the last bit at each iteration, allowing the number of set bits to be counted efficiently.
+
+## Topic + Technique Used
+
+**Topic:** Math, Bit Manipulation
+
+**Technique Used:** Set Bit Counting + Right Shift
+
+## Time Complexity
+
+**O(log a + log b)**
+
+Each loop processes the binary digits of its respective number.
+
+## Space Complexity
+
+**O(1)**
+
+Only a constant number of variables are used.
