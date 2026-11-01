@@ -35,8 +35,8 @@ My goal is to strengthen my understanding of Data Structures and Algorithms, imp
 | -------------- |----------|
 | Language       | Java     |
 | Platform       | LeetCode |
-| Total Problems | 81       |
-| Topics Covered | 15       |
+| Total Problems | 93       |
+| Topics Covered | 17       |
 
 ---
 
@@ -53,12 +53,14 @@ LeetCode-Java
 ├── Linked_List
 ├── Math
 ├── Prefix_Sum
+├── Priority_Queue 
 ├── Recursion
 ├── Sliding_Window
 ├── Sorting
 ├── Stack
 ├── Stimulation
 ├── String
+├── Tree
 ├── Two_Pointers
 ├── LICENSE
 ├── .gitignore
@@ -75,18 +77,20 @@ The table below shows the number of LeetCode problems solved in each Data Struct
 | Arrays         |               7 |
 | Binary Search  |               5 |
 | Dynamic Progm  |               2 |
-| Two Pointers   |               6 |
-| Sliding Window |               2 |
+| Greedy         |               9 |
 | Hashing        |              11 |
-| Greedy         |               8 |
-| Math           |              15 |
-| String         |               4 |
-| Sorting        |               1 |
-| Recursion      |               3 |
+| Linked List    |              11 |
+| Math           |              17 |
 | Prefix Sum     |               2 |
-| Linked List    |              10 |
+| Priority Queue |               2 |
+| Recursion      |               3 |
+| Sliding Window |               2 |
+| Sorting        |               2 |
+| Stack          |               5 |
 | Stimulation    |               3 |
-| Stack          |               2 |
+| String         |               4 |
+| Tree           |               2 |
+| Two Pointers   |               6 |
 
 ---
 
