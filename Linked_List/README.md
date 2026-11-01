@@ -329,6 +329,50 @@ O(n + m)
 ```
 Each node is visited once.
 
+---
+
+# 92. Reverse Linked List II
+
+## Problem Statement
+
+Given the head of a singly linked list and two positions `left` and `right`, reverse the nodes of the list from position `left` to position `right` (1-indexed).
+
+Return the modified linked list.
+
+## Approach
+
+### Linked List + Head Insertion Technique
+
+1. Initialize pointers to track the starting position of the sublist and the node before it.
+2. Traverse the linked list until reaching the `left` position.
+3. Store the first node of the sublist in `last`.
+4. Traverse from `left` to `right`:
+   - Store the next node in a temporary pointer.
+   - Update `rightestNode` to maintain the connection with the remaining list.
+   - Use the `toadd()` helper method to insert the current node at the beginning of the reversed sublist.
+5. Connect the original first node of the sublist (`last`) to the remaining part of the linked list.
+6. If `left` is not `1`, connect the node before the sublist to the new head of the reversed sublist.
+7. Return the updated head.
+
+The head insertion technique reverses the selected portion without creating a new linked list.
+
+## Topic + Technique Used
+
+**Topic:** Linked List
+
+**Technique Used:** Iterative Reversal + Head Insertion + Pointer Manipulation
+
+## Time Complexity
+
+**O(n)**
+
+The linked list is traversed once to reach the required positions and reverse the selected portion.
+
+## Space Complexity
+
+**O(1)**
+
+Only a constant number of pointers and variables are used. No additional data structure is required.
 ### Space Complexity
 ```
 O(1)
