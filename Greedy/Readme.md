@@ -366,3 +366,50 @@ The array is traversed once from right to left.
 **O(1)**
 
 Only a constant number of variables are used.
+
+---
+
+# 4091. Maximum Sum of Squares of Digits
+
+## Problem Statement
+
+Given two integers `num` and `sum`, construct a number containing exactly `num` digits such that:
+
+- The sum of its digits is equal to `sum`.
+- Each digit is between `0` and `9`.
+- The sum of the squares of its digits is maximized.
+
+Return the resulting number as a string. If no valid number can be constructed, return an empty string.
+
+## Approach
+
+### Greedy + Maximum Digit Selection
+
+1. Check whether `sum > 9 * num`. If true, return an empty string because the required digit sum is impossible.
+2. Create a `StringBuilder` to construct the result.
+3. Iterate exactly `num` times.
+4. In each iteration:
+   - Choose the maximum possible digit using `Math.min(9, sum)`.
+   - Append that digit to the `StringBuilder`.
+   - Subtract the chosen digit from `sum`.
+5. Return the constructed string.
+
+The greedy approach places the largest possible digit at each position, maximizing the sum of squared digits.
+
+## Topic + Technique Used
+
+**Topic:** Greedy, Math, String
+
+**Technique Used:** Greedy + Maximum Digit Selection
+
+## Time Complexity
+
+**O(num)**
+
+The loop executes exactly `num` times, with constant-time operations in each iteration.
+
+## Space Complexity
+
+**O(num)**
+
+The `StringBuilder` stores exactly `num` digits.
