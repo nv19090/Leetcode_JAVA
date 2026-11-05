@@ -262,3 +262,50 @@ This approach checks every possible subarray and calculates its product incremen
   * Only a few variables are used.
 
 ---
+
+# 1385. Find the Distance Value Between Two Arrays
+
+## Problem Statement
+
+Given two integer arrays `arr1` and `arr2`, and an integer `d`, return the distance value between the two arrays.
+
+The distance value is the number of elements `arr1[i]` such that there is no element `arr2[j]` satisfying:
+
+`|arr1[i] - arr2[j]| <= d`
+
+## Approach
+
+### Brute Force + Nested Loop
+
+1. Traverse every element of `arr1`.
+2. Initialize `count = 1`, assuming the current element satisfies the condition.
+3. Traverse every element of `arr2`.
+4. Calculate the absolute difference between the current elements.
+5. If the difference is less than or equal to `d`:
+   - Set `count = 0`.
+   - Break the inner loop because the element is invalid.
+6. If no element in `arr2` violates the condition, increment `ans`.
+7. Return the final answer.
+
+The nested loops compare every element of `arr1` against the elements of `arr2` to determine whether it contributes to the distance value.
+
+## Topic + Technique Used
+
+**Topic:** Arrays
+
+**Technique Used:** Brute Force + Nested Loop + Absolute Difference
+
+## Time Complexity
+
+**O(n × m)**
+
+Where `n` is the length of `arr1` and `m` is the length of `arr2`.
+
+## Space Complexity
+
+**O(1)**
+
+Only a constant number of variables are used.
+
+---
+
