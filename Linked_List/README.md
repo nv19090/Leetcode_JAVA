@@ -378,3 +378,27 @@ Only a constant number of pointers and variables are used. No additional data st
 O(1)
 ```
 Only a few pointers are used (excluding the output list).
+
+---
+
+# 203. Remove Linked List Elements
+
+## Problem Statement
+Given the head of a linked list and an integer `val`, remove all nodes from the linked list whose value equals `val` and return the updated head.
+
+## Approach
+- Remove matching nodes from the beginning of the linked list.
+- Use two pointers, `temp` and `prev`, to traverse the remaining list.
+- When `temp.val == val`, update `prev.next` to skip the current node.
+- Otherwise, move both pointers forward.
+- Return the updated head.
+
+## Topic + Technique Used
+- **Topic:** Linked List
+- **Technique:** Two-Pointer Traversal and Node Deletion
+
+## Time Complexity
+O(n), where n is the number of nodes in the linked list.
+
+## Space Complexity
+O(1), as only constant extra pointers are used.
