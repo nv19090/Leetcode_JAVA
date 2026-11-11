@@ -696,3 +696,29 @@ Each loop processes the binary digits of its respective number.
 **O(1)**
 
 Only a constant number of variables are used.
+
+---
+
+# 3789. Minimum Cost to Acquire Required Items
+
+## Problem Statement
+Given the costs of type 1, type 2, and combined items, along with the required quantities of type 1 and type 2, calculate the minimum cost to satisfy both requirements.
+
+## Approach
+- Calculate the cost of purchasing both item types separately.
+- Calculate the cost of purchasing only combined items to satisfy the maximum requirement.
+- Calculate the cost of purchasing combined items for the common requirement and individual items for the remaining requirements.
+- Return the minimum among all three possibilities.
+
+## Topic + Technique Used
+- **Topic:** Math
+- **Technique:** Greedy Approach and Case Comparison
+
+## Time Complexity
+O(1), as only a constant number of calculations are performed.
+
+## Space Complexity
+O(1), as only constant extra variables are used.
+
+---
+
