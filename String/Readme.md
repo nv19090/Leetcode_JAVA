@@ -159,3 +159,25 @@ Return `true` if it is a palindrome; otherwise, return `false`.
 * **O(n)**
 * The binary representation requires space proportional to the length of the input string.
 
+---
+
+# 2124. Check if All A's Appears Before All B's
+
+## Problem Statement
+Given a string containing only `'a'` and `'b'`, check whether all occurrences of `'a'` appear before any occurrence of `'b'`.
+
+## Approach
+- Traverse the string while characters are `'a'`.
+- Once the first `'b'` is encountered, check the remaining characters.
+- If any `'a'` appears after a `'b'`, return `false`.
+- If the traversal completes successfully, return `true`.
+
+## Topic + Technique Used
+- **Topic:** String
+- **Technique:** Two-Pass Linear Traversal
+
+## Time Complexity
+O(n), where n is the length of the string.
+
+## Space Complexity
+O(1), as no extra data structures are used.
