@@ -181,3 +181,26 @@ O(n), where n is the length of the string.
 
 ## Space Complexity
 O(1), as no extra data structures are used.
+
+---
+
+# 2914. Minimum Number of Changes to Make Binary String Beautiful
+
+## Problem Statement
+Given a binary string `s` of even length, find the minimum number of character changes required to make the string beautiful. A string is beautiful if every consecutive pair of characters contains identical characters.
+
+## Approach
+- Traverse the string in pairs using an index increment of 2.
+- Compare the characters at positions `i` and `i + 1`.
+- If both characters are different, increment the change counter.
+- Return the total number of changes required.
+
+## Topic + Technique Used
+- **Topic:** String
+- **Technique:** Greedy Approach and Pairwise Traversal
+
+## Time Complexity
+O(n), where n is the length of the string.
+
+## Space Complexity
+O(1), as only constant extra space is used.
